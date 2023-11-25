@@ -1,0 +1,18 @@
+{
+  "name": "coffee-house",
+  "private": true,
+  "description": "Rolling Scopes School Stage-1 (JavaScript/Front-end 2023Q4) project «Coffee House»",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all",
+    "not < 0.25%"
+  ],
+  "engines": {
+    "node": "^16"
+  }
+}
