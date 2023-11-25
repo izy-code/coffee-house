@@ -13,6 +13,10 @@ body {
   background-color: tomato;
 }
 
+.test {
+  color: green;
+}
+
 .visually-hidden {
   position: absolute;
   overflow: hidden;
