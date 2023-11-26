@@ -2,6 +2,7 @@
 <html class="page" lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home — Resource Coffee House</title>
     <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png"> <!-- 180×180 -->
@@ -16,7 +17,7 @@
     <div class="page__container">
       <header class="page__header header">
         <span class="header__logo logo">
-          <img class="logo__img" src="" width="" height="" alt="">
+          <img class="logo__img" src="img/logo.svg" width="100" height="60" alt="Resource Coffee House logo">
         </span>
         <nav class="nav">
           <ul class="nav__list">
@@ -37,11 +38,11 @@
         <a class="header__menu-link" href="menu.html">Menu</a>
       </header>
 
-      <main>
+      <main class="page__main">
         <h1 class="visually-hidden">Resource Coffee House: a haven for coffee, tea, and dessert enthusiasts</h1>
         <section class="hero">
-          <h2 class="hero__heading heading"><span class="heading__accent">Enjoy</span> premium coffee at
-            our charming cafe</h2>
+          <h2 class="heading heading--large heading--light"><span class="heading__accent">Enjoy</span>
+            premium coffee at our charming cafe</h2>
           <p class="hero__desc">With its inviting atmosphere and delicious coffee options, the Coffee House Resource is
             a popular destination for coffee
             lovers and those seeking a warm and inviting space to enjoy their favorite beverage.</p>
@@ -64,7 +65,8 @@
             <ul class="slider__slides">
               <li class="slider__slide slide">
                 <h3 class="slide__title">S’mores Frappuccino</h3>
-                <img class="slide__img" src="" width="" height="" alt="">
+                <img class="slide__img" src="img/slider/slider-1.png" width="480" height="480"
+                  alt="High cylindrical glass full of milky-brown drink topped with milk layer">
                 <p class="slide__desc">This new drink takes an espresso and mixes it with brown sugar and cinnamon
                   before being topped with oat milk.</p>
                 <p class="slide__price">$5.50</p>
@@ -89,16 +91,20 @@
             where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.</h2>
           <ul class="about__gallery gallery">
             <li class="gallery__item">
-              <img class="gallery__img" src="" width="" height="" alt="">
+              <img class="gallery__img" src="img/about/about-1.jpg" width="726" height="726"
+                alt="Girl stirs coffee and smiles">
             </li>
             <li class="gallery__item">
-              <img class="gallery__img" src="" width="" height="" alt="">
+              <img class="gallery__img" src="img/about/about-2.jpg" width="726" height="726"
+                alt="Cup on a table decorated with a garland">
             </li>
             <li class="gallery__item">
-              <img class="gallery__img" src="" width="" height="" alt="">
+              <img class="gallery__img" src="img/about/about-3.jpg" width="726" height="726"
+                alt="Man holding a cup of coffee and looking at a laptop">
             </li>
             <li class="gallery__item">
-              <img class="gallery__img" src="" width="" height="" alt="">
+              <img class="gallery__img" src="img/about/about-4.jpg" width="726" height="726"
+                alt="Hugging couple with cups of coffee">
             </li>
           </ul>
         </section>
@@ -110,28 +116,26 @@
             coffee from wherever you are</p>
           <ul class="apps__links">
             <li class="apps__item">
-              <a class="apps__link" href="#">
-                <p class="apps__text">
-                  <span>Available on the</span>
-                  <span class="apps__distributor">App Store</span>
-                </p>
+              <a class="apps__link apps__link--apple" href="#">
+                <span class="apps__text">Available on the</span>
+                <span class="apps__distributor">App Store</span>
               </a>
             </li>
             <li class="apps__item">
-              <a class="apps__link" href="#">
-                <p class="apps__text">
-                  <span>Available on</span>
-                  <span class="apps__distributor">Google Play</span>
-                </p>
+              <a class="apps__link apps__link--google" href="#">
+                <span class="apps__text">Available on</span>
+                <span class="apps__distributor">Google Play</span>
               </a>
             </li>
           </ul>
-          <img class="apps__img" src="" width="" height="" alt="">
+          <img class="apps__img" src="img/mobile-screens.png" width="630" height="630"
+            alt="Two mobile phones with the Resource Coffee House app on the screen">
         </section>
       </main>
 
-      <footer>
-        <h2 class="footer__heading heading">Sip, Savor, Smile. <span class="heading__accent">It’s coffee time!</span>
+      <footer class="footer">
+        <h2 class="footer__heading heading heading--light">Sip, Savor, Smile. <span class="heading__accent">It’s coffee
+            time!</span>
         </h2>
         <section class="footer__socials socials">
           <h3 class="visually-hidden">Join us on social networks</h3>
@@ -157,9 +161,10 @@
         <section class="footer__contacts contacts" id="contacts">
           <h3 class="contacts__title">Contact us</h3>
           <address class="contacts__address">
-            <a class="contacts__item" href="https://maps.app.goo.gl/D8TFF5PnfE8yj8S8A">8558 Green Rd., LA</a>
-            <a class="contacts__item" href="tel:+16035550123">+1 (603) 555-0123</a>
-            <span class="contacts__item">Mon-Sat: 9:00 AM – 23:00 PM</span>
+            <a class="contacts__item contacts__item--location" href="https://maps.app.goo.gl/D8TFF5PnfE8yj8S8A">8558
+              Green Rd., LA</a>
+            <a class="contacts__item contacts__item--phone" href="tel:+16035550123">+1 (603) 555-0123</a>
+            <span class="contacts__item contacts__item--time">Mon-Sat: 9:00 AM – 23:00 PM</span>
           </address>
         </section>
       </footer>

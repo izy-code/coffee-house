@@ -1,0 +1,23 @@
+@use "../abstracts/forward" as *;
+
+.heading {
+  margin-block: 0;
+  margin-bottom: 40px;
+  font-size: 60px;
+  line-height: 125%;
+  color: var(--color-text-dark);
+
+  &--large {
+    font-size: 72px;
+    line-height: 105%;
+  }
+
+  &--light {
+    color: var(--color-text-light);
+  }
+}
+
+.heading__accent {
+  font-style: italic;
+  color: var(--color-text-accent);
+}

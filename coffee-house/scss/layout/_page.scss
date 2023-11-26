@@ -1,10 +1,12 @@
+@use "../abstracts/forward" as *;
+
 .page {
   height: 100%;
   font-family: var(--font-primary);
   font-size: 16px;
   line-height: 150%;
   font-weight: 600;
-  color: var(--color-font-basic);
+  color: var(--color-text-dark);
   scroll-behavior: smooth;
 }
 
@@ -14,4 +16,20 @@
   min-height: 100%;
   margin: 0;
   background-color: var(--color-bg-body);
+}
+
+.page__container {
+  width: $width-desktop;
+  margin-inline: auto;
+  padding: 20px 40px 40px;
+}
+
+.page__header {
+  margin-bottom: 20px;
+}
+
+.page__main {
+  display: grid;
+  row-gap: 100px;
+  margin-bottom: 100px;
 }

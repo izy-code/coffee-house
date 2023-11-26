@@ -1,0 +1,27 @@
+.hero {
+  display: grid;
+  grid-template-columns: 530px;
+  padding: 100px;
+  background-image: url("../img/hero-bg.jpg");
+  border-radius: 40px;
+}
+
+.hero__desc {
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+.hero__btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: start;
+  min-width: 200px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-body);
+  border: none;
+  border-radius: 100px;
+}
