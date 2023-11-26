@@ -1,0 +1,20 @@
+$color-dark: #403f3d;
+$color-brown: #665f55;
+$color-light-brown: #b0907a;
+$color-semi-light: #c1b6ad;
+$color-light: #e1d4c9;
+
+:root {
+  --font-primary: "Inter", "Arial", sans-serif;
+
+  --color-text-dark: #{$color-dark};
+  --color-text-light: #{$color-light};
+  --color-text-accent: #{$color-light-brown};
+
+  --color-bg-body: #{$color-light};
+  --color-bg-container: #{$color-brown};
+  --color-bg-backdrop: #{transparentize($color-dark, 0.2)};
+
+  --color-bd-light: #{$color-semi-light};
+  --color-bd-dark: #{$color-brown};
+}

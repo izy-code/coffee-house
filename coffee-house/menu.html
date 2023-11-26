@@ -1,11 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="page" lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Menu — Resource Coffee House</title>
+    <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png"> <!-- 180×180 -->
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="favicon.ico"> <!-- 32×32 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <body class="page__body">
+    <div class="page__container">
+      <header class="page__header header">
+        <a class="header__logo logo" href="index.html">
+          <img class="logo__img" src="" width="" height="" alt="">
+        </a>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="index.html#slider">Favorite coffee</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="index.html#about">About</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="index.html#apps">Mobile app</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#contacts">Contact us</a>
+            </li>
+          </ul>
+        </nav>
+        <span class="header__menu-link header__menu-link--active">Menu</span>
+      </header>
 
+      <main>
+        <h1 class="visually-hidden">Menu: Resource Coffee House</h1>
+        <section class="menu">
+          <h2 class="menu__heading heading">Behind each of our cups hides an <span class="heading__accent">amazing
+              surprise</span></h2>
+          <ul class="menu__categories">
+            <li class="menu__category">
+              <button class="menu__button menu__button--coffee menu__button--active" type="button">Coffee</button>
+            </li>
+            <li class="menu__category">
+              <button class="menu__button menu__button--tea" type="button">Tea</button>
+            </li>
+            <li class="menu__category">
+              <button class="menu__button menu__button--dessert" type="button">Dessert</button>
+            </li>
+          </ul>
+          <ul class="menu__list">
+            <li class="card">
+              <h3 class="card__title">Irish coffee</h3>
+              <img class="card__img" src="" width="" height="" alt="">
+              <p class="card__desc">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+              <p class="card__price">$7.00</p>
+            </li>
+            <li class="card">
+              <h3 class="card__title">Kahlua coffee</h3>
+              <img class="card__img" src="" width="" height="" alt="">
+              <p class="card__desc">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
+              <p class="card__price">$7.00</p>
+            </li>
+            <li class="card">
+              <h3 class="card__title">Honey raf</h3>
+              <img class="card__img" src="" width="" height="" alt="">
+              <p class="card__desc">Espresso with frothed milk, cream and aromatic honey</p>
+              <p class="card__price">$5.50</p>
+            </li>
+            <li class="card">
+              <h3 class="card__title">Ice cappuccino</h3>
+              <img class="card__img" src="" width="" height="" alt="">
+              <p class="card__desc">Cappuccino with soft thick foam in summer version with ice</p>
+              <p class="card__price">$5.00</p>
+            </li>
+            <li class="card">
+              <h3 class="card__title">Espresso</h3>
+              <img class="card__img" src="" width="" height="" alt="">
+              <p class="card__desc">Classic black coffee</p>
+              <p class="card__price">$4.50</p>
+            </li>
+            <li class="card">
+              <h3 class="card__title">Latte</h3>
+              <img class="card__img" src="" width="" height="" alt="">
+              <p class="card__desc">Espresso coffee with the addition of steamed milk and dense milk foam</p>
+              <p class="card__price">$5.50</p>
+            </li>
+            <li class="card">
+              <h3 class="card__title">Latte macchiato</h3>
+              <img class="card__img" src="" width="" height="" alt="">
+              <p class="card__desc">Espresso with frothed milk and chocolate</p>
+              <p class="card__price">$5.50</p>
+            </li>
+            <li class="card">
+              <h3 class="card__title">Coffee with cognac</h3>
+              <img class="card__img" src="" width="" height="" alt="">
+              <p class="card__desc">Fragrant black coffee with cognac and whipped cream</p>
+              <p class="card__price">$6.50</p>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer>
+        <h2 class="footer__heading heading">Sip, Savor, Smile. <span class="heading__accent">It’s coffee time!</span>
+        </h2>
+        <section class="footer__socials socials">
+          <h3 class="visually-hidden">Join us on social networks</h3>
+          <ul class="socials__list">
+            <li class="socials__item">
+              <a class="socials__link socials__link--icon_twit" href="#">
+                <span class="visually-hidden">Twitter</span>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link socials__link--icon_inst" href="#">
+                <span class="visually-hidden">Instagram</span>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link socials__link--icon_fb" href="#">
+                <span class="visually-hidden">Facebook</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="footer__contacts contacts" id="contacts">
+          <h3 class="contacts__title">Contact us</h3>
+          <address class="contacts__address">
+            <a class="contacts__item" href="https://maps.app.goo.gl/D8TFF5PnfE8yj8S8A">8558 Green Rd., LA</a>
+            <a class="contacts__item" href="tel:+16035550123">+1 (603) 555-0123</a>
+            <span class="contacts__item">Mon-Sat: 9:00 AM – 23:00 PM</span>
+          </address>
+        </section>
+      </footer>
+    </div>
   </body>
 </html>
