@@ -558,6 +558,7 @@ img {
   flex-direction: column;
   border: 1px solid var(--color-bd-light);
   border-radius: 40px;
+  cursor: pointer;
 }
 
 .card__text-wrapper {
