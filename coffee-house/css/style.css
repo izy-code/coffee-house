@@ -268,10 +268,29 @@ img {
   flex-shrink: 0;
 }
 
-.menu__button {
-  display: inline-flex;
+.menu__heading {
+  max-width: 800px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.menu__categories {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
   justify-content: center;
-  align-items: center;
+  margin-bottom: 40px;
+}
+
+.menu__button {
+  display: inline-grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 8px;
+  justify-content: center;
+  place-items: center;
   padding: 8px 16px 8px 8px;
   font-family: var(--font-primary);
   font-size: 16px;
@@ -282,17 +301,53 @@ img {
   border: 1px solid var(--color-bd-light);
   border-radius: 100px;
   cursor: pointer;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;
 }
-.menu__button--active {
+.menu__button::before {
+  content: "";
+  grid-area: 1/1/2/2;
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-bd-light);
+  border-radius: 50%;
+  transition: background-color 0.5s ease-in-out;
+}
+.menu__button::after {
+  content: "";
+  grid-area: 1/1/2/2;
+  width: 16px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.menu__button:hover, .menu__button--active {
   color: var(--color-text-light);
   background-color: var(--color-bg-container);
-  border: none;
+  border-color: var(--color-bg-container);
+}
+.menu__button:hover::before, .menu__button--active::before {
+  background-color: var(--color-bg-body);
+}
+.menu__button--active {
   cursor: initial;
+}
+.menu__button--coffee::after {
+  background-image: url("../img/icons/cup.png");
+}
+.menu__button--tea::after {
+  background-image: url("../img/icons/teapot.png");
+}
+.menu__button--dessert::after {
+  background-image: url("../img/icons/cake.png");
 }
 
 .menu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 40px;
 }
 
 .footer {
@@ -490,17 +545,56 @@ img {
   transform-origin: center;
 }
 .gallery__item:hover .gallery__img {
-  transform: scale(0.9);
+  transform: scale(0.91);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-bd-light);
+  border-radius: 40px;
+}
+
+.card__text-wrapper {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  row-gap: 12px;
+  height: 100%;
+  padding: 20px;
 }
 
 .card__title,
 .card__price {
+  margin-block: 0;
   font-size: 24px;
   line-height: 125%;
 }
 
 .card__desc {
+  margin-block: 0;
   font-weight: 400;
+}
+
+.card__img-wrapper {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  order: -1;
+  overflow: hidden;
+  height: 308px;
+  border-radius: 40px;
+}
+
+.card__img {
+  max-width: unset;
+  height: unset;
+  transition: transform 0.5s ease-out;
+  transform: scale(1);
+  transform-origin: center;
+}
+.card:hover .card__img {
+  transform: scale(0.91);
 }
 
 .contacts__title {

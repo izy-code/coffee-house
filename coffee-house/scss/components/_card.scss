@@ -1,9 +1,50 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-bd-light);
+  border-radius: 40px;
+}
+
+.card__text-wrapper {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  row-gap: 12px;
+  height: 100%;
+  padding: 20px;
+}
+
 .card__title,
 .card__price {
+  margin-block: 0;
   font-size: 24px;
   line-height: 125%;
 }
 
 .card__desc {
+  margin-block: 0;
   font-weight: 400;
 }
+
+.card__img-wrapper {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  order: -1;
+  overflow: hidden;
+  height: 308px;
+  border-radius: 40px;
+}
+
+.card__img {
+  max-width: unset;
+  height: unset;
+  transition: transform 0.5s ease-out;
+  transform: scale(1);
+  transform-origin: center;
+
+  .card:hover & {
+    transform: scale(0.91);
+  }
+}
+
