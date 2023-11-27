@@ -8,6 +8,7 @@
   font-weight: 600;
   color: var(--color-text-dark);
   scroll-behavior: smooth;
+  font-feature-settings: "clig" off, "liga" off;
 }
 
 .page__body {
