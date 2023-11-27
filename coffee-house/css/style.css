@@ -390,6 +390,39 @@ img {
   margin-block: 0;
 }
 
+.gallery {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-rows: 430px 120px 430px;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: column;
+  gap: 40px;
+}
+
+.gallery__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.gallery__item:nth-child(3n+1) {
+  grid-row: span 2;
+}
+
+.gallery__img {
+  max-width: unset;
+  height: unset;
+  transition: transform 0.5s ease-out;
+  transform: scale(1);
+  transform-origin: center;
+}
+.gallery__item:hover .gallery__img {
+  transform: scale(0.9);
+}
+
 .card__title,
 .card__price {
   font-size: 24px;
