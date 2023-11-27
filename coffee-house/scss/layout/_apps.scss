@@ -1,14 +1,74 @@
+@use "../abstracts/forward" as *;
+
+.apps {
+  display: flex;
+  column-gap: 100px;
+  align-items: center;
+}
+
 .apps__desc {
+  margin-block: 0;
+  margin-bottom: 40px;
   font-weight: 400;
+}
+
+.apps__links {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .apps__link {
   display: inline-grid;
+  grid-template-columns: min-content 1fr;
+  row-gap: 2px;
+  column-gap: 8px;
+  align-items: center;
+  min-width: 200px;
+  padding: 12px 20px;
   text-decoration: none;
   color: var(--color-text-dark);
+  border: 1px solid var(--color-bd-dark);
+  border-radius: 100px;
+  transition: background-color 0.5s ease-in, color 0.5s ease-in,;
+
+  &::before {
+    content: "";
+    grid-row: span 2;
+    width: 36px;
+    height: 36px;
+    background-color: var(--color-text-dark);
+    transition: background-color 0.5s ease-in;
+  }
+
+  &--apple::before {
+    mask-image: url("../img/icons/app-store.svg");
+  }
+
+  &--google::before {
+    mask-image: url("../img/icons/google-play.svg");
+  }
+
+  &:hover {
+    color: var(--color-text-light);
+    background-color: var(--color-bg-container);
+
+    &::before {
+      background-color: var(--color-text-light);
+    }
+  }
 }
 
 .apps__text {
   font-size: 10px;
   line-height: 140%;
+}
+
+.apps__distributor {
+  grid-column: 2;
+}
+
+.apps__img {
+  flex-shrink: 0;
 }
