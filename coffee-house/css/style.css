@@ -132,6 +132,7 @@ img {
 }
 .nav__link--menu::before {
   content: "";
+  flex-shrink: 0;
   order: 1;
   width: 20px;
   height: 20px;
@@ -146,6 +147,7 @@ img {
   display: grid;
   grid-template-columns: 530px;
   padding: 100px;
+  background-color: var(--color-text-dark);
   background-image: url("../img/hero-bg.jpg");
   background-position: center;
   background-size: cover;

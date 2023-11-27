@@ -46,6 +46,7 @@
 
     &::before {
       content: "";
+      flex-shrink: 0;
       order: 1;
       width: 20px;
       height: 20px;
