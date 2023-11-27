@@ -148,14 +148,15 @@ img {
 }
 
 .hero__desc {
-  font-weight: 600;
+  margin-block: 0;
+  margin-bottom: 40px;
+  font-weight: 400;
   color: var(--color-text-light);
 }
 
 .hero__btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-grid;
+  place-items: center;
   justify-self: start;
   min-width: 200px;
   padding: 20px;
@@ -165,6 +166,29 @@ img {
   background-color: var(--color-bg-body);
   border: none;
   border-radius: 100px;
+}
+.hero__btn::after {
+  content: "";
+  left: 0;
+  grid-area: 1/1/2/2;
+  justify-self: start;
+  width: 20px;
+  height: 20px;
+  margin-left: 96px;
+  background-image: url("../img/icons/coffee-cup.svg");
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+.hero__btn:hover::after {
+  opacity: 1;
+}
+
+.hero__btn-text {
+  grid-area: 1/1/2/2;
+  transition: transform 0.5s ease-out;
+}
+.hero__btn:hover .hero__btn-text {
+  transform: translateX(-14px);
 }
 
 .apps__desc {
@@ -226,7 +250,7 @@ img {
   line-height: 125%;
   color: var(--color-text-dark);
 }
-.heading--large {
+.heading--main {
   font-size: 72px;
   line-height: 105%;
 }
