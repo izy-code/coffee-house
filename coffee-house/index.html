@@ -19,7 +19,7 @@
         <span class="header__logo logo">
           <img class="logo__img" src="img/logo.svg" width="100" height="60" alt="Resource Coffee House logo">
         </span>
-        <nav class="nav">
+        <nav class="header__nav nav">
           <ul class="nav__list">
             <li class="nav__item">
               <a class="nav__link" href="#slider">Favorite coffee</a>
@@ -31,11 +31,11 @@
               <a class="nav__link" href="#apps">Mobile app</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" href="#contacts">Contact us</a>
+              <a class="nav__link" href="#footer">Contact us</a>
             </li>
           </ul>
+          <a class="nav__link nav__link--menu" href="menu.html">Menu</a>
         </nav>
-        <a class="header__menu-link" href="menu.html">Menu</a>
       </header>
 
       <main class="page__main">
@@ -52,17 +52,7 @@
         <section class="favorite" id="slider">
           <h2 class="favorite__heading heading">Choose your <span class="heading__accent">favorite</span> coffee</h2>
           <div class="favorite__slider slider">
-            <ul class="slider__buttons">
-              <li>
-                <button class="slider__button slider__button--prev" type="button"><span class="visually-hidden">Previous
-                    slide</span></button>
-              </li>
-              <li>
-                <button class="slider__button slider__button--next" type="button"><span class="visually-hidden">Next
-                    slide</span></button>
-              </li>
-            </ul>
-            <ul class="slider__slides">
+            <ol class="slider__slides">
               <li class="slider__slide slide">
                 <h3 class="slide__title">S’mores Frappuccino</h3>
                 <img class="slide__img" src="img/slider/slider-1.png" width="480" height="480"
@@ -71,10 +61,16 @@
                   before being topped with oat milk.</p>
                 <p class="slide__price">$5.50</p>
               </li>
-            </ul>
-            <ul class="slider__progress-bars">
+            </ol>
+            <div class="slider__controls">
+              <button class="slider__button slider__button--prev" type="button"><span class="visually-hidden">Previous
+                  slide</span></button>
+              <button class="slider__button slider__button--next" type="button"><span class="visually-hidden">Next
+                  slide</span></button>
+            </div>
+            <ol class="slider__progress-bars">
               <li class="slider__progress-container">
-                <span class="slider__progress-bar slider__progress-bar--active"></span>
+                <span class="slider__progress-bar slider__progress-bar--current"></span>
               </li>
               <li class="slider__progress-container">
                 <span class="slider__progress-bar"></span>
@@ -82,7 +78,7 @@
               <li class="slider__progress-container">
                 <span class="slider__progress-bar"></span>
               </li>
-            </ul>
+            </ol>
           </div>
         </section>
 
@@ -133,7 +129,7 @@
         </section>
       </main>
 
-      <footer class="footer">
+      <footer class="footer" id="footer">
         <h2 class="footer__heading heading heading--light">Sip, Savor, Smile. <span class="heading__accent">It’s coffee
             time!</span>
         </h2>
@@ -158,7 +154,7 @@
           </ul>
         </section>
 
-        <section class="footer__contacts contacts" id="contacts">
+        <section class="footer__contacts contacts">
           <h3 class="contacts__title">Contact us</h3>
           <address class="contacts__address">
             <a class="contacts__item contacts__item--location" href="https://maps.app.goo.gl/D8TFF5PnfE8yj8S8A">8558

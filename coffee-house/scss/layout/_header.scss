@@ -1,4 +1,14 @@
-.header__menu-link {
-  text-decoration: none;
-  color: var(--color-text-dark);
+.header {
+  display: flex;
+  justify-content: space-between;
 }
+
+.header__logo {
+  flex-shrink: 0;
+  margin-right: 50px;
+}
+
+.header__nav {
+  flex-grow: 1;
+}
+
