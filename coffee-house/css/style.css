@@ -96,6 +96,7 @@ img {
   list-style: none;
   display: flex;
   flex-grow: 1;
+  flex-wrap: wrap;
   gap: 40px;
   justify-content: center;
   margin-right: 50px;
@@ -191,6 +192,10 @@ img {
   transform: translateX(-14px);
 }
 
+.favorite__heading {
+  text-align: center;
+}
+
 .apps__desc {
   font-weight: 400;
 }
@@ -263,11 +268,99 @@ img {
   color: var(--color-text-accent);
 }
 
-.slider__buttons {
+.slider {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__window {
+  grid-area: 1/1/2/2;
+  overflow: hidden;
+  margin-inline: 104px;
+}
+
+.slider__slides-row {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.slider__controls {
+  display: flex;
+  grid-area: 1/1/2/2;
+  justify-content: space-between;
+  width: 100%;
+  padding-inline: 4px;
+}
+
+.slider__button {
+  display: inline-flex;
+  justify-content: center;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-bg-body);
+  border: 1px solid var(--color-bd-dark);
+  border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.5s ease-out;
+}
+.slider__button::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-text-dark);
+  transition: background-color 0.5s ease-out;
+  -webkit-mask-image: url("../img/icons/arrow-left.svg");
+          mask-image: url("../img/icons/arrow-left.svg");
+}
+.slider__button--next::after {
+  transform: rotate(180deg);
+}
+.slider__button:hover {
+  background-color: var(--color-bg-container);
+}
+.slider__button:hover::after {
+  background-color: var(--color-text-light);
+}
+
+.slider__bars {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.slider__bar-container {
+  width: 40px;
+  height: 4px;
+  background-color: var(--color-bd-light);
+  border-radius: 2px;
+}
+
+.slider__bar {
+  height: 100%;
+  background-color: var(--color-bd-dark);
+  border-radius: inherit;
+}
+.slider__bar--current {
+  display: block;
+  width: 100%;
 }
 
 .slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 480px;
   text-align: center;
 }
 
@@ -277,8 +370,24 @@ img {
   line-height: 125%;
 }
 
+.slide__title {
+  margin-block: 0;
+  margin-bottom: 16px;
+}
+
+.slide__img {
+  order: -1;
+  margin-bottom: 20px;
+}
+
 .slide__desc {
+  margin-block: 0;
+  margin-bottom: 16px;
   font-weight: 400;
+}
+
+.slide__price {
+  margin-block: 0;
 }
 
 .card__title,

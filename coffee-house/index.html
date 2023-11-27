@@ -22,7 +22,7 @@
         <nav class="header__nav nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a class="nav__link" href="#slider">Favorite coffee</a>
+              <a class="nav__link" href="#favorite">Favorite coffee</a>
             </li>
             <li class="nav__item">
               <a class="nav__link" href="#about">About</a>
@@ -49,34 +49,36 @@
           <a class="hero__btn" href="menu.html"><span class="hero__btn-text">Menu</span></a>
         </section>
 
-        <section class="favorite" id="slider">
+        <section class="favorite" id="favorite">
           <h2 class="favorite__heading heading">Choose your <span class="heading__accent">favorite</span> coffee</h2>
           <div class="favorite__slider slider">
-            <ol class="slider__slides">
-              <li class="slider__slide slide">
-                <h3 class="slide__title">S’mores Frappuccino</h3>
-                <img class="slide__img" src="img/slider/slider-1.png" width="480" height="480"
-                  alt="High cylindrical glass full of milky-brown drink topped with milk layer">
-                <p class="slide__desc">This new drink takes an espresso and mixes it with brown sugar and cinnamon
-                  before being topped with oat milk.</p>
-                <p class="slide__price">$5.50</p>
-              </li>
-            </ol>
+            <div class="slider__window">
+              <ol class="slider__slides-row">
+                <li class="slide">
+                  <h3 class="slide__title">S’mores Frappuccino</h3>
+                  <img class="slide__img" src="img/slider/slider-1.png" width="480" height="480"
+                    alt="High cylindrical glass full of milky-brown drink topped with milk layer">
+                  <p class="slide__desc">This new drink takes an espresso and mixes it with brown sugar and cinnamon
+                    before being topped with oat milk.</p>
+                  <p class="slide__price">$5.50</p>
+                </li>
+              </ol>
+            </div>
             <div class="slider__controls">
               <button class="slider__button slider__button--prev" type="button"><span class="visually-hidden">Previous
                   slide</span></button>
               <button class="slider__button slider__button--next" type="button"><span class="visually-hidden">Next
                   slide</span></button>
             </div>
-            <ol class="slider__progress-bars">
-              <li class="slider__progress-container">
-                <span class="slider__progress-bar slider__progress-bar--current"></span>
+            <ol class="slider__bars">
+              <li class="slider__bar-container">
+                <span class="slider__bar slider__bar--current"></span>
               </li>
-              <li class="slider__progress-container">
-                <span class="slider__progress-bar"></span>
+              <li class="slider__bar-container">
+                <span class="slider__bar"></span>
               </li>
-              <li class="slider__progress-container">
-                <span class="slider__progress-bar"></span>
+              <li class="slider__bar-container">
+                <span class="slider__bar"></span>
               </li>
             </ol>
           </div>

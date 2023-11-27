@@ -1,4 +1,8 @@
 .slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 480px;
   text-align: center;
 }
 
@@ -8,6 +12,22 @@
   line-height: 125%;
 }
 
+.slide__title {
+  margin-block: 0;
+  margin-bottom: 16px;
+}
+
+.slide__img {
+  order: -1;
+  margin-bottom: 20px;
+}
+
 .slide__desc {
+  margin-block: 0;
+  margin-bottom: 16px;
   font-weight: 400;
+}
+
+.slide__price {
+  margin-block: 0;
 }
