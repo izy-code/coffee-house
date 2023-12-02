@@ -1,6 +1,6 @@
 @use "../abstracts/forward" as *;
 
-@mixin button--active {
+@mixin btn--active {
   color: var(--color-text-light);
   background-color: var(--color-bg-container);
   border-color: var(--color-bg-container);
@@ -25,7 +25,7 @@
   margin-bottom: 40px;
 }
 
-.menu__button {
+.menu__btn {
   display: inline-grid;
   grid-template-columns: min-content 1fr;
   column-gap: 8px;
@@ -64,12 +64,12 @@
 
   &:hover {
     @include media-hover {
-      @include button--active;
+      @include btn--active;
     }
   }
 
   &--active {
-    @include button--active;
+    @include btn--active;
     cursor: initial;
   }
 

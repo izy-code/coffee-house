@@ -20,11 +20,15 @@
 .page__container {
   display: grid;
   grid-template-rows: min-content 1fr min-content;
-  min-width: $width-mobile;
+  min-width: $width-mobile-min;
   max-width: $width-desktop;
   min-height: 100%;
   margin-inline: auto;
   padding: 20px 40px 40px;
+
+  @include media-tablet {
+    max-width: $width-tablet;
+  }
 }
 
 .page__header {

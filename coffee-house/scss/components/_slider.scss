@@ -12,6 +12,14 @@
   grid-area: 1 / 1 / 2 / 2;
   overflow: hidden;
   margin-inline: 104px;
+
+  @include media-tablet {
+    margin-inline: 100px;
+  }
+
+  @include media-mobile {
+    margin-inline: 0;
+  }
 }
 
 .slider__slides-row {
@@ -26,9 +34,17 @@
   justify-content: space-between;
   width: 100%;
   padding-inline: 4px;
+
+  @include media-tablet {
+    padding-inline: 0;
+  }
+
+  @include media-mobile {
+    display: none;
+  }
 }
 
-.slider__button {
+.slider__btn {
   display: inline-flex;
   justify-content: center;
   place-items: center;

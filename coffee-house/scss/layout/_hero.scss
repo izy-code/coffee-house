@@ -2,13 +2,21 @@
 
 .hero {
   display: grid;
-  grid-template-columns: 530px;
+  grid-template-columns: min(530px, 100%);
   padding: 100px;
   background-color: var(--color-text-dark);
   background-image: url("../img/hero-bg.jpg");
   background-position: center;
   background-size: cover;
   border-radius: 40px;
+
+  @media (max-width: 800px) {
+    padding-inline: 60px;
+  }
+
+  @include media-mobile {
+    padding: 60px 16px;
+  }
 }
 
 .hero__desc {
@@ -31,6 +39,7 @@
   border: none;
   border-radius: 100px;
 
+
   &::after {
     content: "";
     left: 0;
@@ -42,6 +51,10 @@
     background-image: url("../img/icons/coffee-cup.svg");
     opacity: 0;
     transition: opacity 0.5s ease-out;
+
+    @include media-tablet {
+      opacity: 1;
+    }
   }
 
   &:hover::after {
@@ -54,6 +67,10 @@
 .hero__btn-text {
   grid-area: 1 / 1 / 2 / 2;
   transition: transform 0.5s ease-out;
+
+  @include media-tablet {
+    transform: translateX(-14px);
+  }
 
   .hero__btn:hover & {
     @include media-hover {

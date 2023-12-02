@@ -1,3 +1,5 @@
+@use "../abstracts/forward" as *;
+
 .slide {
   display: flex;
   flex-direction: column;
@@ -21,6 +23,11 @@
 .slide__img {
   order: -1;
   margin-bottom: 20px;
+
+  @include media-mobile {
+    width: 348px;
+    height: 348px;
+  }
 }
 
 .slide__desc {
