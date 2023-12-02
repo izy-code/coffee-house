@@ -8,10 +8,6 @@
   font-weight: 600;
   color: var(--color-text-dark);
 
-  @include media-tablet {
-    font-size: calc(60px - 4vw);
-  }
-
   @include media-mobile {
     font-size: 32px;
   }
@@ -19,10 +15,6 @@
   &--main {
     font-size: 72px;
     line-height: 76px;
-
-    @include media-tablet {
-      font-size: calc(72px - 4vw);
-    }
 
     @include media-mobile {
       font-size: 42px;
