@@ -3,3 +3,21 @@
   padding: 0;
   list-style: none;
 }
+
+@mixin media-tablet {
+  @media (max-width: $width-tablet) {
+    @content;
+  }
+}
+
+@mixin media-mobile {
+  @media (max-width: $width-mobile) {
+    @content;
+  }
+}
+
+@mixin media-hover {
+  @media (hover: hover) {
+    @content;
+  }
+}

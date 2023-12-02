@@ -50,15 +50,15 @@
     transform: scaleX(1);
   }
 
-  &--location::before {
+  &--icon_location::before {
     background-image: url("../img/icons/location.svg");
   }
 
-  &--phone::before {
+  &--icon_phone::before {
     background-image: url("../img/icons/phone.svg");
   }
 
-  &--time::before {
+  &--icon_time::before {
     background-image: url("../img/icons/clock.svg");
   }
 }

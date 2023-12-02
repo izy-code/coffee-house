@@ -20,7 +20,7 @@
 .page__container {
   display: grid;
   grid-template-rows: min-content 1fr min-content;
-  width: $width-desktop;
+  max-width: $width-desktop;
   min-height: 100%;
   margin-inline: auto;
   padding: 20px 40px 40px;

@@ -1,11 +1,13 @@
 .header {
+  --margin-right-header: 50px;
+
   display: flex;
   justify-content: space-between;
 }
 
 .header__logo {
   flex-shrink: 0;
-  margin-right: 50px;
+  margin-right: var(--margin-right-header);
 }
 
 .header__nav {

@@ -67,15 +67,15 @@
     cursor: initial;
   }
 
-  &--coffee::after {
+  &--icon_coffee::after {
     background-image: url("../img/icons/cup.png");
   }
 
-  &--tea::after {
+  &--icon_tea::after {
     background-image: url("../img/icons/teapot.png");
   }
 
-  &--dessert::after {
+  &--icon_dessert::after {
     background-image: url("../img/icons/cake.png");
   }
 }
