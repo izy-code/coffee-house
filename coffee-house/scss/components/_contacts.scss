@@ -1,3 +1,5 @@
+@use "../abstracts/forward" as *;
+
 .contacts__title {
   margin-block: 0;
   margin-bottom: 40px;
@@ -46,8 +48,10 @@
   }
 
   &[href]:hover::after {
-    opacity: 1;
-    transform: scaleX(1);
+    @include media-hover {
+      opacity: 1;
+      transform: scaleX(1);
+    }
   }
 
   &--icon_location::before {

@@ -51,11 +51,13 @@
   }
 
   &:hover {
-    color: var(--color-text-light);
-    background-color: var(--color-bg-container);
+    @include media-hover {
+      color: var(--color-text-light);
+      background-color: var(--color-bg-container);
 
-    &::before {
-      background-color: var(--color-text-light);
+      &::before {
+        background-color: var(--color-text-light);
+      }
     }
   }
 }

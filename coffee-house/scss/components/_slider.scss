@@ -54,10 +54,12 @@
   }
 
   &:hover {
-    background-color: var(--color-bg-container);
+    @include media-hover {
+      background-color: var(--color-bg-container);
 
-    &::after {
-      background-color: var(--color-text-light);
+      &::after {
+        background-color: var(--color-text-light);
+      }
     }
   }
 }

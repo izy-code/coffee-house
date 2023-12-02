@@ -1,5 +1,15 @@
 @use "../abstracts/forward" as *;
 
+@mixin button--active {
+  color: var(--color-text-light);
+  background-color: var(--color-bg-container);
+  border-color: var(--color-bg-container);
+
+  &::before {
+    background-color: var(--color-bg-body);
+  }
+}
+
 .menu__heading {
   max-width: 800px;
   margin-inline: auto;
@@ -52,18 +62,14 @@
     background-repeat: no-repeat;
   }
 
-  &:hover,
-  &--active {
-    color: var(--color-text-light);
-    background-color: var(--color-bg-container);
-    border-color: var(--color-bg-container);
-
-    &::before {
-      background-color: var(--color-bg-body);
+  &:hover {
+    @include media-hover {
+      @include button--active;
     }
   }
 
   &--active {
+    @include button--active;
     cursor: initial;
   }
 

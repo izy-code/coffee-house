@@ -55,6 +55,7 @@ img {
 .page__container {
   display: grid;
   grid-template-rows: min-content 1fr min-content;
+  min-width: 380px;
   max-width: 1440px;
   min-height: 100%;
   margin-inline: auto;
@@ -130,16 +131,20 @@ img {
   opacity: 0;
   transition: opacity 0.5s ease-out;
 }
-.hero__btn:hover::after {
-  opacity: 1;
+@media (hover: hover) {
+  .hero__btn:hover::after {
+    opacity: 1;
+  }
 }
 
 .hero__btn-text {
   grid-area: 1/1/2/2;
   transition: transform 0.5s ease-out;
 }
-.hero__btn:hover .hero__btn-text {
-  transform: translateX(-14px);
+@media (hover: hover) {
+  .hero__btn:hover .hero__btn-text {
+    transform: translateX(-14px);
+  }
 }
 
 .favorite__heading {
@@ -179,8 +184,10 @@ img {
   transform: scale(1);
   transform-origin: center;
 }
-.about__item:hover .about__img {
-  transform: scale(0.91);
+@media (hover: hover) {
+  .about__item:hover .about__img {
+    transform: scale(0.91);
+  }
 }
 
 .apps {
@@ -234,12 +241,14 @@ img {
   -webkit-mask-image: url("../img/icons/google-play.svg");
           mask-image: url("../img/icons/google-play.svg");
 }
-.apps__link:hover {
-  color: var(--color-text-light);
-  background-color: var(--color-bg-container);
-}
-.apps__link:hover::before {
-  background-color: var(--color-text-light);
+@media (hover: hover) {
+  .apps__link:hover {
+    color: var(--color-text-light);
+    background-color: var(--color-bg-container);
+  }
+  .apps__link:hover::before {
+    background-color: var(--color-text-light);
+  }
 }
 
 .apps__text {
@@ -307,16 +316,24 @@ img {
   background-position: center;
   background-repeat: no-repeat;
 }
-.menu__button:hover, .menu__button--active {
+@media (hover: hover) {
+  .menu__button:hover {
+    color: var(--color-text-light);
+    background-color: var(--color-bg-container);
+    border-color: var(--color-bg-container);
+  }
+  .menu__button:hover::before {
+    background-color: var(--color-bg-body);
+  }
+}
+.menu__button--active {
   color: var(--color-text-light);
   background-color: var(--color-bg-container);
   border-color: var(--color-bg-container);
-}
-.menu__button:hover::before, .menu__button--active::before {
-  background-color: var(--color-bg-body);
-}
-.menu__button--active {
   cursor: initial;
+}
+.menu__button--active::before {
+  background-color: var(--color-bg-body);
 }
 .menu__button--icon_coffee::after {
   background-image: url("../img/icons/cup.png");
@@ -396,9 +413,11 @@ img {
   transform: scaleX(0);
   transform-origin: center;
 }
-.nav__link:hover::after {
-  opacity: 1;
-  transform: scaleX(1);
+@media (hover: hover) {
+  .nav__link:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 .nav__link--icon_cup {
   display: flex;
@@ -492,11 +511,13 @@ img {
 .slider__button--next::after {
   transform: rotate(180deg);
 }
-.slider__button:hover {
-  background-color: var(--color-bg-container);
-}
-.slider__button:hover::after {
-  background-color: var(--color-text-light);
+@media (hover: hover) {
+  .slider__button:hover {
+    background-color: var(--color-bg-container);
+  }
+  .slider__button:hover::after {
+    background-color: var(--color-text-light);
+  }
 }
 
 .slider__bars {
@@ -610,8 +631,10 @@ img {
   transform: scale(1);
   transform-origin: center;
 }
-.card:hover .card__img {
-  transform: scale(0.91);
+@media (hover: hover) {
+  .card:hover .card__img {
+    transform: scale(0.91);
+  }
 }
 
 .contacts__title {
@@ -660,9 +683,11 @@ img {
   height: 20px;
   background-repeat: no-repeat;
 }
-.contacts__item[href]:hover::after {
-  opacity: 1;
-  transform: scaleX(1);
+@media (hover: hover) {
+  .contacts__item[href]:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 .contacts__item--icon_location::before {
   background-image: url("../img/icons/location.svg");
@@ -712,10 +737,12 @@ img {
   -webkit-mask-image: url("../img/icons/facebook.svg");
           mask-image: url("../img/icons/facebook.svg");
 }
-.socials__link:hover {
-  background-color: var(--color-bg-body);
-  border-color: var(--color-bg-body);
-}
-.socials__link:hover::after {
-  background-color: var(--color-text-dark);
+@media (hover: hover) {
+  .socials__link:hover {
+    background-color: var(--color-bg-body);
+    border-color: var(--color-bg-body);
+  }
+  .socials__link:hover::after {
+    background-color: var(--color-text-dark);
+  }
 }/*# sourceMappingURL=style.css.map */

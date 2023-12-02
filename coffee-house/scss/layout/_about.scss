@@ -35,7 +35,9 @@
   transform-origin: center;
 
   .about__item:hover & {
-    transform: scale(0.91);
+    @include media-hover {
+      transform: scale(0.91);
+    }
   }
 }
 

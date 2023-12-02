@@ -36,8 +36,10 @@
   }
 
   &:hover::after {
-    opacity: 1;
-    transform: scaleX(1);
+    @include media-hover {
+      opacity: 1;
+      transform: scaleX(1);
+    }
   }
 
   &--icon_cup {
