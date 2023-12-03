@@ -24,9 +24,15 @@
   order: -1;
   margin-bottom: 20px;
 
-  @include media-mobile {
+  @include media-phablet {
     width: 348px;
     height: 348px;
+  }
+
+  @include media-mobile {
+    width: 100%;
+    max-width: unset;
+    height: auto;
   }
 }
 

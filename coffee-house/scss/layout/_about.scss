@@ -9,7 +9,7 @@
   grid-auto-flow: dense;
   gap: 40px;
 
-  @media (max-width: 1100px) {
+  @include media-laptop {
     grid-template-rows: 590px 590px;
     grid-template-columns: 650px;
     justify-content: center;
@@ -31,7 +31,7 @@
   &:nth-child(4n + 4) {
     grid-row: span 2;
 
-    @media (max-width: 1100px) {
+    @include media-laptop {
       grid-row: span 1;
     }
   }
@@ -43,7 +43,7 @@
   &:nth-child(2),
   &:nth-child(3),
   &:nth-child(n + 5) {
-    @media (max-width: 1100px) {
+    @include media-laptop {
       display: none;
     }
   }

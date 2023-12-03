@@ -2,8 +2,16 @@
 
 .apps {
   display: flex;
-  column-gap: 100px;
+  gap: 100px;
   align-items: center;
+
+  @include media-laptop {
+    flex-direction: column;
+  }
+
+  @include media-phablet {
+    row-gap: 40px;
+  }
 }
 
 .apps__desc {
@@ -73,4 +81,15 @@
 
 .apps__img {
   flex-shrink: 0;
+
+  @include media-phablet {
+    width: 348px;
+    height: 348px;
+  }
+
+  @include media-mobile {
+    width: 100%;
+    max-width: unset;
+    height: auto;
+  }
 }

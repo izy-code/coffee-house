@@ -20,7 +20,7 @@
 .page__container {
   display: grid;
   grid-template-rows: min-content 1fr min-content;
-  min-width: $width-mobile-min;
+  min-width: $width-min;
   max-width: $width-desktop;
   min-height: 100%;
   margin-inline: auto;
@@ -28,6 +28,10 @@
 
   @include media-tablet {
     max-width: $width-tablet;
+  }
+
+  @include media-phablet {
+    padding-inline: 16px;
   }
 }
 
