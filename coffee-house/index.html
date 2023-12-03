@@ -19,22 +19,26 @@
         <span class="header__logo logo">
           <img class="logo__img" src="img/logo.svg" width="100" height="60" alt="Resource Coffee House logo">
         </span>
+        <button class="header__burger" type="button">
+          <span class="visually-hidden">Open navigation</span>
+        </button>
+
         <nav class="header__nav nav">
           <ul class="nav__list">
-            <li class="nav__item">
+            <li>
               <a class="nav__link" href="#favorite">Favorite coffee</a>
             </li>
-            <li class="nav__item">
+            <li>
               <a class="nav__link" href="#about">About</a>
             </li>
-            <li class="nav__item">
+            <li>
               <a class="nav__link" href="#apps">Mobile app</a>
             </li>
-            <li class="nav__item">
+            <li>
               <a class="nav__link" href="#footer">Contact us</a>
             </li>
           </ul>
-          <a class="nav__link nav__link--menu" href="menu.html">Menu</a>
+          <a class="nav__link nav__link--icon_cup" href="menu.html">Menu</a>
         </nav>
       </header>
 
@@ -51,7 +55,7 @@
 
         <section class="favorite" id="favorite">
           <h2 class="favorite__heading heading">Choose your <span class="heading__accent">favorite</span> coffee</h2>
-          <div class="favorite__slider slider">
+          <div class="slider">
             <div class="slider__window">
               <ol class="slider__slides-row">
                 <li class="slide">
@@ -65,9 +69,9 @@
               </ol>
             </div>
             <div class="slider__controls">
-              <button class="slider__button slider__button--prev" type="button"><span class="visually-hidden">Previous
+              <button class="slider__btn slider__btn--prev" type="button"><span class="visually-hidden">Previous
                   slide</span></button>
-              <button class="slider__button slider__button--next" type="button"><span class="visually-hidden">Next
+              <button class="slider__btn slider__btn--next" type="button"><span class="visually-hidden">Next
                   slide</span></button>
             </div>
             <ol class="slider__bars">
@@ -87,41 +91,40 @@
         <section class="about" id="about">
           <h2 class="heading">Resource is <span class="heading__accent">the perfect and cozy place</span> where you can
             enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.</h2>
-          <ul class="gallery">
-            <li class="gallery__item">
-              <img class="gallery__img" src="img/about/about-1.jpg" width="726" height="726"
+          <ul class="about__list">
+            <li class="about__item">
+              <img class="about__img" src="img/about/about-1.jpg" width="726" height="726"
                 alt="Girl stirs coffee and smiles">
             </li>
-            <li class="gallery__item">
-              <img class="gallery__img" src="img/about/about-2.jpg" width="726" height="726"
-                alt="Cup on a table decorated with a garland">
-            </li>
-            <li class="gallery__item">
-              <img class="gallery__img" src="img/about/about-3.jpg" width="726" height="726"
+            <li class="about__item">
+              <img class="about__img" src="img/about/about-2.jpg" width="726" height="726"
                 alt="Man holding a cup of coffee and looking at a laptop">
             </li>
-            <li class="gallery__item">
-              <img class="gallery__img" src="img/about/about-4.jpg" width="726" height="726"
+            <li class="about__item">
+              <img class="about__img" src="img/about/about-3.jpg" width="726" height="726"
+                alt="Cup on a table decorated with a garland">
+            </li>
+            <li class="about__item">
+              <img class="about__img" src="img/about/about-4.jpg" width="726" height="726"
                 alt="Hugging couple with cups of coffee">
             </li>
           </ul>
         </section>
 
         <section class="apps" id="apps">
-          <div class="apps__text-container">
-            <h2 class="apps__heading heading"><span class="heading__accent">Download</span> our apps to start ordering
-            </h2>
+          <div>
+            <h2 class="heading"><span class="heading__accent">Download</span> our apps to start ordering</h2>
             <p class="apps__desc">Download the Resource app today and experience the comfort of ordering your favorite
               coffee from wherever you are</p>
             <ul class="apps__links">
-              <li class="apps__item">
-                <a class="apps__link apps__link--apple" href="#">
+              <li>
+                <a class="apps__link apps__link--icon_apple" href="#">
                   <span class="apps__text">Available on the</span>
                   <span class="apps__distributor">App Store</span>
                 </a>
               </li>
-              <li class="apps__item">
-                <a class="apps__link apps__link--google" href="#">
+              <li>
+                <a class="apps__link apps__link--icon_google" href="#">
                   <span class="apps__text">Available on</span>
                   <span class="apps__distributor">Google Play</span>
                 </a>
@@ -129,43 +132,42 @@
             </ul>
           </div>
           <img class="apps__img" src="img/mobile-screens.png" width="630" height="630"
-            alt="Two mobile phones with the Resource Coffee House app on the screen">
+            alt="Two smartphones with the Resource Coffee House app on the screen">
         </section>
       </main>
 
       <footer class="footer" id="footer">
-        <h2 class="footer__heading heading heading--light">Sip, Savor, Smile. <span class="heading__accent">It’s coffee
-            time!</span>
+        <h2 class="heading heading--light">Sip, Savor, Smile. <span class="heading__accent">It’s coffee time!</span>
         </h2>
-        <section class="footer__contacts contacts">
-          <h3 class="contacts__title">Contact us</h3>
-          <address class="contacts__address">
-            <a class="contacts__item contacts__item--location" href="https://maps.app.goo.gl/D8TFF5PnfE8yj8S8A"
-              target="_blank" rel="noopener noreferrer">8558 Green Rd., LA</a>
-            <a class="contacts__item contacts__item--phone" href="tel:+16035550123">+1 (603) 555-0123</a>
-            <span class="contacts__item contacts__item--time">Mon-Sat: 9:00 AM – 23:00 PM</span>
-          </address>
-        </section>
-
         <section class="footer__socials socials">
           <h3 class="visually-hidden">Join us on social networks</h3>
           <ul class="socials__list">
-            <li class="socials__item">
+            <li>
               <a class="socials__link socials__link--icon_twit" href="#">
                 <span class="visually-hidden">Twitter</span>
               </a>
             </li>
-            <li class="socials__item">
+            <li>
               <a class="socials__link socials__link--icon_inst" href="#">
                 <span class="visually-hidden">Instagram</span>
               </a>
             </li>
-            <li class="socials__item">
+            <li>
               <a class="socials__link socials__link--icon_fb" href="#">
                 <span class="visually-hidden">Facebook</span>
               </a>
             </li>
           </ul>
+        </section>
+
+        <section class="footer__contacts contacts">
+          <h3 class="contacts__title">Contact us</h3>
+          <address class="contacts__address">
+            <a class="contacts__item contacts__item--icon_location" href="https://maps.app.goo.gl/D8TFF5PnfE8yj8S8A"
+              target="_blank" rel="noopener noreferrer">8558 Green Rd., LA</a>
+            <a class="contacts__item contacts__item--icon_phone" href="tel:+16035550123">+1 (603) 555-0123</a>
+            <span class="contacts__item contacts__item--icon_time">Mon-Sat: 9:00 AM – 23:00 PM</span>
+          </address>
         </section>
       </footer>
     </div>

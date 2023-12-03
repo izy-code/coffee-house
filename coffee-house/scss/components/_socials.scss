@@ -38,11 +38,13 @@
   }
 
   &:hover {
-    background-color: var(--color-bg-body);
-    border-color: var(--color-bg-body);
+    @include media-hover {
+      background-color: var(--color-bg-body);
+      border-color: var(--color-bg-body);
 
-    &::after {
-      background-color: var(--color-text-dark);
+      &::after {
+        background-color: var(--color-text-dark);
+      }
     }
   }
 }

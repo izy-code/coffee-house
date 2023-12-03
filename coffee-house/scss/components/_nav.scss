@@ -4,6 +4,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include media-tablet {
+    display: none;
+  }
 }
 
 .nav__list {
@@ -13,7 +17,7 @@
   flex-wrap: wrap;
   gap: 40px;
   justify-content: center;
-  margin-right: 50px;
+  margin-right: var(--margin-right-header);
 }
 
 .nav__link {
@@ -36,11 +40,13 @@
   }
 
   &:hover::after {
-    opacity: 1;
-    transform: scaleX(1);
+    @include media-hover {
+      opacity: 1;
+      transform: scaleX(1);
+    }
   }
 
-  &--menu {
+  &--icon_cup {
     display: flex;
     column-gap: 8px;
 

@@ -1,11 +1,39 @@
+@use "../abstracts/forward" as *;
+
 .header {
+  --margin-right-header: 30px;
+
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header__logo {
   flex-shrink: 0;
-  margin-right: 50px;
+  margin-right: var(--margin-right-header);
+}
+
+.header__burger {
+  display: none;
+
+  @include media-tablet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-bg-body);
+    border: 1px solid var(--color-bd-dark);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &::after {
+    content: "";
+    width: 18px;
+    height: 10px;
+    background-image: url("../img/icons/burger.svg");
+  }
 }
 
 .header__nav {

@@ -1,3 +1,5 @@
+@use "../abstracts/forward" as *;
+
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -6,13 +8,33 @@
   padding: 100px;
   background-color: var(--color-bg-container);
   border-radius: 40px;
+
+  @include media-laptop {
+    grid-template-columns: 1fr;
+    padding-inline: 60px;
+  }
+
+  @include media-phablet {
+    padding: 60px 16px;
+  }
 }
 
 .footer__socials {
   grid-column: 1;
+
+  @include media-laptop {
+    margin-bottom: 100px;
+  }
+
+  @include media-phablet {
+    margin-bottom: 40px;
+  }
 }
 
 .footer__contacts {
-  grid-row: span 2;
-  grid-column: 2;
+  grid-area: 1 / 2 / 3 / 3;
+
+  @include media-laptop {
+    grid-area: auto;
+  }
 }

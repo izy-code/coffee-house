@@ -8,9 +8,27 @@
   font-weight: 600;
   color: var(--color-text-dark);
 
+  @include media-tablet {
+      font-size: #{linterp($width-tablet, 60px, $width-phablet, 32px, 100vw)};
+  }
+
+  @include media-phablet {
+    font-size: 32px;
+  }
+
   &--main {
     font-size: 72px;
     line-height: 76px;
+
+    @media (max-width: $width-hero-breakpoint) {
+      font-size: #{linterp($width-hero-breakpoint, 72px, $width-phablet, 42px, 100vw)};
+      line-height: 105%;
+    }
+
+    @include media-phablet {
+      font-size: 42px;
+      line-height: 48px;
+    }
   }
 
   &--light {

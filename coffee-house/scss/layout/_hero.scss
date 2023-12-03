@@ -1,12 +1,27 @@
+@use "../abstracts/forward" as *;
+
 .hero {
   display: grid;
-  grid-template-columns: 530px;
+  grid-template-columns: min(530px, 100%);
   padding: 100px;
   background-color: var(--color-text-dark);
   background-image: url("../img/hero-bg.jpg");
   background-position: center;
   background-size: cover;
   border-radius: 40px;
+
+  @include media-laptop {
+    padding-inline: 60px;
+  }
+
+  @media (max-width: $width-hero-breakpoint) {
+      padding-inline: #{linterp($width-hero-breakpoint, 60px, $width-phablet, 16px, 100vw)};
+      padding-block: #{linterp($width-hero-breakpoint, 100px, $width-phablet, 60px, 100vw)};
+  }
+
+  @include media-phablet {
+    padding: 60px 16px;
+  }
 }
 
 .hero__desc {
@@ -29,6 +44,7 @@
   border: none;
   border-radius: 100px;
 
+
   &::after {
     content: "";
     left: 0;
@@ -40,10 +56,16 @@
     background-image: url("../img/icons/coffee-cup.svg");
     opacity: 0;
     transition: opacity 0.5s ease-out;
+
+    @include media-tablet {
+      opacity: 1;
+    }
   }
 
   &:hover::after {
-    opacity: 1;
+    @include media-hover {
+      opacity: 1;
+    }
   }
 }
 
@@ -51,7 +73,13 @@
   grid-area: 1 / 1 / 2 / 2;
   transition: transform 0.5s ease-out;
 
-  .hero__btn:hover & {
+  @include media-tablet {
     transform: translateX(-14px);
+  }
+
+  .hero__btn:hover & {
+    @include media-hover {
+      transform: translateX(-14px);
+    }
   }
 }
