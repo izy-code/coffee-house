@@ -19,6 +19,10 @@
         <a class="header__logo logo" href="index.html">
           <img class="logo__img" src="img/logo.svg" width="100" height="60" alt="Resource Coffee House logo">
         </a>
+        <button class="header__burger" type="button">
+          <span class="visually-hidden">Open navigation</span>
+        </button>
+
         <nav class="header__nav nav">
           <ul class="nav__list">
             <li>
@@ -45,15 +49,16 @@
               surprise</span></h2>
           <ul class="menu__categories">
             <li>
-              <button class="menu__btn menu__btn--icon_coffee menu__btn--active" type="button">Coffee</button>
+              <button class="menu__btn-category menu__btn-category--icon_coffee menu__btn-category--active" type="button">Coffee</button>
             </li>
             <li>
-              <button class="menu__btn menu__btn--icon_tea" type="button">Tea</button>
+              <button class="menu__btn-category menu__btn-category--icon_tea" type="button">Tea</button>
             </li>
             <li>
-              <button class="menu__btn menu__btn--icon_dessert" type="button">Dessert</button>
+              <button class="menu__btn-category menu__btn-category--icon_dessert" type="button">Dessert</button>
             </li>
           </ul>
+
           <ul class="menu__list">
             <li class="card">
               <div class="card__text-wrapper">
@@ -136,6 +141,9 @@
               </div>
             </li>
           </ul>
+          <button class="menu__btn-load" type="button">
+            <span class="visually-hidden">Load more menu items</span>
+          </button>
         </section>
       </main>
 

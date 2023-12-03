@@ -23,9 +23,13 @@
   gap: 16px;
   justify-content: center;
   margin-bottom: 40px;
+
+  @include media-phablet {
+    gap: 8px;
+  }
 }
 
-.menu__btn {
+.menu__btn-category {
   display: inline-grid;
   grid-template-columns: min-content 1fr;
   column-gap: 8px;
@@ -89,6 +93,45 @@
 .menu__list {
   @include list-reset;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, 310px);
   gap: 40px;
+  justify-content: center;
+
+  /* Avoid 3-column grid with 4 items */
+  @include media-laptop {
+    margin-inline: 10px;
+  }
+
+  @include media-tablet {
+    margin-inline: unset;
+  }
+
+  @include media-mobile {
+    grid-template-columns: clamp($width-min - 32px, 100vw - 32px, 310px);
+  }
+}
+
+.menu__btn-load {
+  display: none;
+
+  @include media-laptop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    margin-inline: auto;
+    margin-top: 40px;
+    background-color: var(--color-bg-body);
+    border: 1px solid var(--color-bd-dark);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &::after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/icons/refresh.svg");
+  }
 }
