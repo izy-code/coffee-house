@@ -97,15 +97,6 @@
   gap: 40px;
   justify-content: center;
 
-  /* Avoid 3-column grid with 4 items */
-  @include media-laptop {
-    margin-inline: 10px;
-  }
-
-  @include media-tablet {
-    margin-inline: unset;
-  }
-
   @include media-mobile {
     grid-template-columns: clamp($width-min - 32px, 100vw - 32px, 310px);
   }
@@ -114,7 +105,7 @@
 .menu__btn-load {
   display: none;
 
-  @include media-laptop {
+  @include media-tablet {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,12 +117,25 @@
     border: 1px solid var(--color-bd-dark);
     border-radius: 50%;
     cursor: pointer;
+    transition: background-color 0.5s ease-out;
   }
 
   &::after {
     content: "";
     width: 24px;
     height: 24px;
-    background-image: url("../img/icons/refresh.svg");
+    background-color: var(--color-text-dark);
+    transition: background-color 0.5s ease-out;
+    mask-image: url("../img/icons/refresh.svg");
+  }
+
+  &:hover {
+    @include media-hover {
+      background-color: var(--color-bg-container);
+
+      &::after {
+        background-color: var(--color-text-light);
+      }
+    }
   }
 }

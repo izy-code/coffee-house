@@ -14,7 +14,7 @@
   margin-inline: 104px;
 
   @include media-tablet {
-    margin-inline: 100px;
+    margin-inline: #{linterp($width-tablet, 100px, $width-phablet, 65px, 100vw)};
   }
 
   @include media-phablet {
