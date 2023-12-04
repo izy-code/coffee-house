@@ -60,6 +60,10 @@
   .about__item:hover & {
     @include media-hover {
       transform: scale(0.91);
+
+      @include media-tablet {
+        transform: scale(0.95);
+      }
     }
   }
 }

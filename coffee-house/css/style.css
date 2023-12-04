@@ -285,6 +285,11 @@ img {
     transform: scale(0.91);
   }
 }
+@media (hover: hover) and (max-width: 768px) {
+  .about__item:hover .about__img {
+    transform: scale(0.95);
+  }
+}
 
 .apps {
   display: flex;
