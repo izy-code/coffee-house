@@ -10,8 +10,9 @@
   gap: 40px;
 
   @include media-laptop {
-    grid-template-rows: 590px 590px;
+    grid-template-rows: repeat(auto-fit, 590px);
     grid-template-columns: 650px;
+    grid-auto-rows: 590px;
     justify-content: center;
   }
 
@@ -43,7 +44,7 @@
   &:nth-child(2),
   &:nth-child(3),
   &:nth-child(n + 5) {
-    @include media-laptop {
+    @include media-tablet {
       display: none;
     }
   }
