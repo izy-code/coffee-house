@@ -15,8 +15,8 @@
   }
 
   @media (max-width: $width-hero-breakpoint) {
-      padding-inline: #{linterp($width-hero-breakpoint, 60px, $width-phablet, 16px, 100vw)};
-      padding-block: #{linterp($width-hero-breakpoint, 100px, $width-phablet, 60px, 100vw)};
+    padding-inline: #{linterp($width-hero-breakpoint, 60px, $width-phablet, 16px, 100vw)};
+    padding-block: #{linterp($width-hero-breakpoint, 100px, $width-phablet, 60px, 100vw)};
   }
 
   @include media-phablet {
@@ -57,7 +57,7 @@
     opacity: 0;
     transition: opacity 0.5s ease-out;
 
-    @include media-tablet {
+    @include media-no-hover {
       opacity: 1;
     }
   }
@@ -73,7 +73,7 @@
   grid-area: 1 / 1 / 2 / 2;
   transition: transform 0.5s ease-out;
 
-  @include media-tablet {
+  @include media-no-hover {
     transform: translateX(-14px);
   }
 

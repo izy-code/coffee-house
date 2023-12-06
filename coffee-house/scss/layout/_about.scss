@@ -2,6 +2,7 @@
 
 .about__list {
   @include list-reset;
+
   display: grid;
   grid-template-rows: 430px 120px 430px;
   grid-template-columns: 1fr 1fr;

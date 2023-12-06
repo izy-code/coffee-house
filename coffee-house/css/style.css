@@ -194,7 +194,7 @@ img {
   opacity: 0;
   transition: opacity 0.5s ease-out;
 }
-@media (max-width: 768px) {
+@media (hover: none) {
   .hero__btn::after {
     opacity: 1;
   }
@@ -209,7 +209,7 @@ img {
   grid-area: 1/1/2/2;
   transition: transform 0.5s ease-out;
 }
-@media (max-width: 768px) {
+@media (hover: none) {
   .hero__btn-text {
     transform: translateX(-14px);
   }
