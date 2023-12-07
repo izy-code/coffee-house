@@ -1,7 +1,7 @@
 @use "../abstracts/forward" as *;
 
 .header {
-  --margin-right-header: 30px;
+  --margin-right-header: 22px;
 
   display: flex;
   justify-content: space-between;
@@ -61,7 +61,7 @@
     }
   }
 
-  &--active {
+  .header--js-burger-opened & {
     &::before {
       transform: rotate(-45deg) translateY(0);
     }
@@ -75,5 +75,35 @@
 .header__nav {
   flex-grow: 1;
   padding-bottom: 4px;
+
+  @include media-tablet {
+    $top-offset: 100px;
+
+    position: fixed;
+    top: $top-offset;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: calc(100vh - $top-offset);
+    padding: 60px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100vw);
+
+    @include media-phablet {
+      padding-inline: 16px;
+    }
+
+    // Script added class that prevents the transition effect of the burger menu hiding while reducing the screen width
+    &--js-transition-added {
+      transition: transform 0.5s ease-out, opacity 0.5s ease-out, visibility 1s ease-out;
+    }
+
+    .header--js-burger-opened & {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+  }
 }
 
