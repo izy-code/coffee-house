@@ -55,34 +55,48 @@
 
         <section class="favorite" id="favorite">
           <h2 class="favorite__heading heading">Choose your <span class="heading__accent">favorite</span> coffee</h2>
-          <div class="slider">
-            <div class="slider__window">
-              <ol class="slider__slides-row">
-                <li class="slide">
+          <div class="carousel">
+            <div class="carousel__window">
+              <ol class="carousel__slides-row">
+                <li class="carousel__slide slide">
                   <h3 class="slide__title">S’mores Frappuccino</h3>
-                  <img class="slide__img" src="img/slider/slider-1.png" width="480" height="480"
+                  <img class="slide__img" src="img/slides/slide-1.png" width="480" height="480"
                     alt="High cylindrical glass full of milky-brown drink topped with milk layer">
                   <p class="slide__desc">This new drink takes an espresso and mixes it with brown sugar and cinnamon
                     before being topped with oat milk.</p>
                   <p class="slide__price">$5.50</p>
                 </li>
+                <li class="carousel__slide slide">
+                  <h3 class="slide__title">Caramel Macchiato</h3>
+                  <img class="slide__img" src="img/slides/slide-2.png" width="480" height="480"
+                    alt="High cylindrical glass full of milky-brown drink topped with milk layer">
+                  <p class="slide__desc">Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.</p>
+                  <p class="slide__price">$5.00</p>
+                </li>
+                <li class="carousel__slide slide">
+                  <h3 class="slide__title">Ice coffee</h3>
+                  <img class="slide__img" src="img/slides/slide-3.png" width="480" height="480"
+                    alt="High cylindrical glass full of milky-brown drink topped with milk layer">
+                  <p class="slide__desc">A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.</p>
+                  <p class="slide__price">$4.50</p>
+                </li>
               </ol>
             </div>
-            <div class="slider__controls">
-              <button class="slider__btn slider__btn--prev" type="button"><span class="visually-hidden">Previous
+            <div class="carousel__controls">
+              <button class="carousel__btn carousel__btn--prev" type="button"><span class="visually-hidden">Previous
                   slide</span></button>
-              <button class="slider__btn slider__btn--next" type="button"><span class="visually-hidden">Next
+              <button class="carousel__btn carousel__btn--next" type="button"><span class="visually-hidden">Next
                   slide</span></button>
             </div>
-            <ol class="slider__bars">
-              <li class="slider__bar-container">
-                <span class="slider__bar slider__bar--current"></span>
+            <ol class="carousel__bars">
+              <li class="carousel__bar-container">
+                <span class="carousel__bar carousel__bar--current"></span>
               </li>
-              <li class="slider__bar-container">
-                <span class="slider__bar"></span>
+              <li class="carousel__bar-container">
+                <span class="carousel__bar"></span>
               </li>
-              <li class="slider__bar-container">
-                <span class="slider__bar"></span>
+              <li class="carousel__bar-container">
+                <span class="carousel__bar"></span>
               </li>
             </ol>
           </div>

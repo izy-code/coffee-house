@@ -1,35 +1,46 @@
 @use "../abstracts/forward" as *;
 
-.slider {
+$width-slide: 480px;
+$button-size: 60px;
+
+.carousel {
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
   justify-content: center;
-  align-items: center;
+  place-items: center;
 }
 
-.slider__window {
+.carousel__window {
+  display: flex;
   grid-area: 1 / 1 / 2 / 2;
   overflow: hidden;
-  margin-inline: 104px;
-
-  @include media-tablet {
-    margin-inline: #{linterp($width-tablet, 100px, $width-phablet, 65px, 100vw)};
-  }
+  width: min(calc(100% - 2 * ($button-size + 5px)), $width-slide);
+  container-type: inline-size;
+  container-name: carousel-window;
 
   @include media-phablet {
-    margin-inline: 0;
+    width: 100%;
   }
 }
 
-.slider__slides-row {
+.carousel__slides-row {
   @include list-reset;
 
   display: flex;
-  justify-content: space-around;
+
+  @container carousel-window (max-width: #{$width-slide}) {
+    column-gap: 35cqw;
+  }
 }
 
-.slider__controls {
+.carousel__slide {
+  @container carousel-window (max-width: #{$width-slide}) {
+    width: 100cqw;
+  }
+}
+
+.carousel__controls {
   display: flex;
   grid-area: 1 / 1 / 2 / 2;
   justify-content: space-between;
@@ -45,12 +56,12 @@
   }
 }
 
-.slider__btn {
+.carousel__btn {
   display: inline-flex;
   justify-content: center;
   place-items: center;
-  width: 60px;
-  height: 60px;
+  width: $button-size;
+  height: $button-size;
   background-color: var(--color-bg-body);
   border: 1px solid var(--color-bd-dark);
   border-radius: 50%;
@@ -81,7 +92,7 @@
   }
 }
 
-.slider__bars {
+.carousel__bars {
   @include list-reset;
 
   display: flex;
@@ -90,14 +101,14 @@
   justify-content: center;
 }
 
-.slider__bar-container {
+.carousel__bar-container {
   width: 40px;
   height: 4px;
   background-color: var(--color-bd-light);
   border-radius: 2px;
 }
 
-.slider__bar {
+.carousel__bar {
   height: 100%;
   background-color: var(--color-bd-dark);
   border-radius: inherit;
