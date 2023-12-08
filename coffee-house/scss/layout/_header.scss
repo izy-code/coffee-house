@@ -96,7 +96,7 @@
 
     // Script added class that prevents the transition effect of the burger menu hiding while reducing the screen width
     &--js-transition-added {
-      transition: transform 0.5s ease-out, opacity 0.5s ease-out, visibility 1s ease-out;
+      transition: transform 0.5s ease-out, opacity 0.5s ease-out, visibility 0.7s ease-out;
     }
 
     .header--js-burger-opened & {

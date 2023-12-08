@@ -654,7 +654,7 @@ img {
 }
 @media (max-width: 768px) {
   .header__nav--js-transition-added {
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out, visibility 1s ease-out;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out, visibility 0.7s ease-out;
   }
   .header--js-burger-opened .header__nav {
     opacity: 1;
