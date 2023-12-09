@@ -16,6 +16,10 @@ let currentSlideNumber = 0;
 let progressValue = 0;
 let progressBarIntervalId;
 
+const transitionDurationValue = Number.parseFloat(window
+  .getComputedStyle(carouselRowNode)
+  .getPropertyValue('transition-duration')) * 1000;
+
 const debouncedUnsetTransition = debounceWithLeading(() => {
   carouselRowNode.style.transition = 'unset';
 }, 250);
@@ -41,9 +45,9 @@ const manageSlideShow = (button) => {
   restartProgressBarTimer();
   button.disabled = true;
 
-  carouselRowNode.addEventListener('transitionend', () => {
+  setTimeout(() => {
     button.disabled = false;
-  }, { once: true });
+  }, transitionDurationValue);
 };
 
 const showPrevSlide = () => {

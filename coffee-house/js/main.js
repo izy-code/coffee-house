@@ -1,5 +1,8 @@
 import { addBurgerHandlers } from './burger.js';
-import { initCarousel } from './carousel.js';
 
 addBurgerHandlers();
-initCarousel();
+
+if (document.querySelector('.carousel') !== null) {
+  const carouselModule = await import('./carousel.js');
+  carouselModule.initCarousel();
+}
