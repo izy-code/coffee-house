@@ -28,6 +28,7 @@ $button-size: 60px;
   @include list-reset;
 
   display: flex;
+  transition: transform 1s ease-in-out;
 
   @container carousel-window (max-width: #{$width-slide}) {
     column-gap: 35cqw;

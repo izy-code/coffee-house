@@ -5,6 +5,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  cursor: pointer;
+  user-select: none;
 }
 
 .slide__title,
@@ -22,6 +24,7 @@
 .slide__img {
   order: -1;
   margin-bottom: 20px;
+  pointer-events: none;
 
   @include media-phablet {
     width: 348px;

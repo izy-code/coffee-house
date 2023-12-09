@@ -262,6 +262,7 @@ img {
   padding: 0;
   list-style: none;
   display: flex;
+  transition: transform 1s ease-in-out;
 }
 @container carousel-window (max-width: 480px) {
   .carousel__slides-row {
@@ -358,6 +359,9 @@ img {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+          user-select: none;
 }
 
 .slide__title,
@@ -375,6 +379,7 @@ img {
 .slide__img {
   order: -1;
   margin-bottom: 20px;
+  pointer-events: none;
 }
 @media (max-width: 480px) {
   .slide__img {
