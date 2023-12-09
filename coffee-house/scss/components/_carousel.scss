@@ -67,7 +67,7 @@ $button-size: 60px;
   border: 1px solid var(--color-bd-dark);
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out, opacity 0.5s ease-out;
 
   &::after {
     content: "";
@@ -91,6 +91,16 @@ $button-size: 60px;
       }
     }
   }
+
+  &:disabled {
+    background-color: var(--color-bg-body);
+    opacity: 0.4;
+    pointer-events: none;
+
+    &::after {
+      background-color: var(--color-text-dark);
+    }
+  }
 }
 
 .carousel__bars {
@@ -110,12 +120,13 @@ $button-size: 60px;
 }
 
 .carousel__bar {
+  display: block;
+  width: 0;
   height: 100%;
   background-color: var(--color-bd-dark);
   border-radius: inherit;
 
   &--current {
-    display: block;
     width: 100%;
   }
 }

@@ -8,7 +8,7 @@ const burgerButtonTextNode = burgerButton.querySelector('.visually-hidden');
 const openBurgerMenu = () => {
   document.body.classList.add('page__body--js-no-scroll');
   header.classList.add('header--js-burger-opened');
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   burgerButtonTextNode.textContent = 'Close navigation';
 };
 

@@ -1,13 +1,20 @@
 import { debounce, debounceWithLeading, addSwipeHandlers } from './util.js';
 
+const SLIDE_SWITCH_INTERVAL = 5800;
+const PROGRESS_VALUE_MAX = 100;
+const PROGRESS_STEPS_COUNT = 20;
+
 const carouselNode = document.querySelector('.carousel');
 const prevButton = carouselNode.querySelector('.carousel__btn--prev');
 const nextButton = carouselNode.querySelector('.carousel__btn--next');
+const carouselBarNodes = carouselNode.querySelectorAll('.carousel__bar');
 const carouselWindowNode = carouselNode.querySelector('.carousel__window');
 const carouselRowNode = carouselWindowNode.querySelector('.carousel__slides-row');
 const slideNodes = carouselRowNode.querySelectorAll('.carousel__slide');
 
 let currentSlideNumber = 0;
+let progressValue = 0;
+let progressBarIntervalId;
 
 const debouncedUnsetTransition = debounceWithLeading(() => {
   carouselRowNode.style.transition = 'unset';
@@ -17,35 +24,82 @@ const debouncedReturnTransition = debounce(() => {
   carouselRowNode.style.transition = '';
 }, 300);
 
-const rearrangeSlide = () => {
+const repositionSlide = () => {
   const slideShift = slideNodes[1].getBoundingClientRect().x - slideNodes[0].getBoundingClientRect().x;
 
   carouselRowNode.style.transform = `translateX(-${currentSlideNumber * slideShift}px)`;
 };
 
-const showPrevSlide = () => {
-  currentSlideNumber--;
+const resetProgressBar = () => {
+  progressValue = 0;
+  carouselBarNodes[currentSlideNumber].style.width = '0%';
+};
+
+const manageSlideShow = (button) => {
   currentSlideNumber = (currentSlideNumber + slideNodes.length) % slideNodes.length;
-  rearrangeSlide();
+  repositionSlide();
+  restartProgressBarTimer();
+  button.disabled = true;
+
+  carouselRowNode.addEventListener('transitionend', () => {
+    button.disabled = false;
+  }, { once: true });
+};
+
+const showPrevSlide = () => {
+  resetProgressBar();
+  currentSlideNumber--;
+  manageSlideShow(prevButton);
 };
 
 const showNextSlide = () => {
+  resetProgressBar();
   currentSlideNumber++;
-  currentSlideNumber = (currentSlideNumber + slideNodes.length) % slideNodes.length;
-  rearrangeSlide();
+  manageSlideShow(nextButton);
+};
+
+const advanceProgressBar = () => {
+  if (progressValue < PROGRESS_VALUE_MAX) {
+    progressValue += PROGRESS_VALUE_MAX / PROGRESS_STEPS_COUNT;
+    carouselBarNodes[currentSlideNumber].style.width = `${progressValue}%`;
+  } else {
+    showNextSlide();
+  }
+};
+
+function restartProgressBarTimer() {
+  clearInterval(progressBarIntervalId);
+
+  progressBarIntervalId = setInterval(() => {
+    advanceProgressBar();
+  }, SLIDE_SWITCH_INTERVAL / PROGRESS_STEPS_COUNT);
+}
+
+const pauseProgressBarTimer = () => {
+  clearInterval(progressBarIntervalId);
 };
 
 const onWindowResize = () => {
-  rearrangeSlide();
+  repositionSlide();
+  resetProgressBar();
   debouncedUnsetTransition();
   debouncedReturnTransition();
 };
 
 const initCarousel = () => {
+  carouselNode.querySelector('.carousel__bar--current').classList.remove('carousel__bar--current');
+  carouselBarNodes.forEach((barNode) => {
+    barNode.style.transition = `width ${SLIDE_SWITCH_INTERVAL / PROGRESS_STEPS_COUNT}ms linear`;
+  });
+  restartProgressBarTimer();
+
   window.addEventListener('resize', onWindowResize);
   prevButton.addEventListener('click', showPrevSlide);
   nextButton.addEventListener('click', showNextSlide);
-
+  carouselWindowNode.addEventListener('mouseenter', pauseProgressBarTimer);
+  carouselWindowNode.addEventListener('mouseleave', restartProgressBarTimer);
+  carouselWindowNode.addEventListener('touchstart', pauseProgressBarTimer, { passive: true });
+  carouselWindowNode.addEventListener('touchend', restartProgressBarTimer);
   addSwipeHandlers(carouselNode, showNextSlide, showPrevSlide);
 };
 
