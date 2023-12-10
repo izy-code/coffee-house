@@ -1125,4 +1125,38 @@ img {
   .footer__contacts {
     grid-area: auto;
   }
+}
+
+.modal {
+  display: flex;
+  width: 800px;
+  padding: 16px;
+  background-color: var(--color-bg-body);
+  border: none;
+  border-radius: 40px;
+}
+.modal::backdrop {
+  background-color: rgba(64, 63, 61, 0.8);
+}
+
+.modal__img-wrapper {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 310px;
+  height: 310px;
+  border-radius: 40px;
+}
+@media (max-width: 480px) {
+  .modal__img-wrapper {
+    display: none;
+  }
+}
+
+.modal__img {
+  max-width: unset;
+  height: unset;
+  transform: scale(1);
 }/*# sourceMappingURL=style.css.map */

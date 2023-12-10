@@ -1,0 +1,36 @@
+@use "sass:color";
+@use "../abstracts/forward" as *;
+
+.modal {
+  display: flex;
+  width: 800px;
+  padding: 16px;
+  background-color: var(--color-bg-body);
+  border: none;
+  border-radius: 40px;
+
+  &::backdrop {
+    background-color: #{color.adjust($color-dark, $alpha: -0.2)};
+  }
+}
+
+.modal__img-wrapper {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 310px;
+  height: 310px;
+  border-radius: 40px;
+
+  @include media-phablet {
+    display: none;
+  }
+}
+
+.modal__img {
+  max-width: unset;
+  height: unset;
+  transform: scale(1);
+}
