@@ -74,6 +74,7 @@
 
 .header__nav {
   flex-grow: 1;
+  min-width: $width-min;
   padding-bottom: 4px;
 
   @include media-tablet {
@@ -94,7 +95,7 @@
       padding-inline: 16px;
     }
 
-    // Script added class that prevents the transition effect of the burger menu hiding while reducing the screen width
+    // Script toggles this class to prevent hiding transition of burger menu when screen narrows under tablet width
     &--js-transition-added {
       transition: transform 0.5s ease-out, opacity 0.5s ease-out, visibility 0.7s ease-out;
     }
