@@ -91,7 +91,6 @@ const onWindowResize = () => {
 };
 
 const initCarousel = () => {
-  carouselNode.querySelector('.carousel__bar--current').classList.remove('carousel__bar--current');
   carouselBarNodes.forEach((barNode) => {
     barNode.style.transition = `width ${SLIDE_SWITCH_INTERVAL / PROGRESS_STEPS_COUNT}ms linear`;
   });

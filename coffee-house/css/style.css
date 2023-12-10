@@ -359,9 +359,6 @@ img {
   background-color: var(--color-bd-dark);
   border-radius: inherit;
 }
-.carousel__bar--current {
-  width: 100%;
-}
 
 .slide {
   display: flex;
