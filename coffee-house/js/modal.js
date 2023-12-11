@@ -10,6 +10,10 @@ const additivesList = modalForm.querySelector('.modal__list--additives');
 const output = modalForm.querySelector('.modal__output');
 const closeButton = modalForm.querySelector('.modal__close-button');
 
+let currentCardData;
+let totalPrice = 0;
+let sizePrice = 0;
+
 const createCheckBox = ({ name }) => {
   const listItem = modalItemTemplateNode.cloneNode(true);
   const listItemInput = listItem.querySelector('.rad-check__input');
@@ -46,8 +50,15 @@ const createListItemsFragment = (dataObject) => {
       fragment.append(listItem);
     });
   } else {
+    let isFirstItem = true;
+
     for (const property in dataObject) {
       const listItem = createRadio(property, dataObject[property]);
+
+      if (isFirstItem) {
+        isFirstItem = false;
+        listItem.querySelector('.rad-check__input').setAttribute('checked', 'true');
+      }
 
       fragment.append(listItem);
     }
@@ -67,21 +78,27 @@ const fillModalData = ({ id, name, description, category, sizes, additives, pric
   imageNode.src = `img/menu/${category}/${id}.jpg`;
   formTitleNode.textContent = name;
   descriptionNode.textContent = description;
-  output.textContent = price;
+  output.textContent = `$${price}`;
   fillList(sizeList, sizes);
   fillList(additivesList, additives);
 };
 
-const openModal = (cardData) => {
+const openModal = () => {
   document.body.style.overflow = 'hidden';
-  fillModalData(cardData);
+  fillModalData(currentCardData);
   modalNode.showModal();
+  totalPrice = Number.parseFloat(currentCardData.price);
+  sizePrice = 0;
+
+  document.addEventListener('keydown', onDocumentKeydown);
 };
 
 const closeModal = () => {
   document.body.style.overflow = 'visible';
   modalNode.close();
   modalForm.reset();
+
+  document.removeEventListener('keydown', onDocumentKeydown);
 };
 
 const onCloseButtonClick = () => {
@@ -94,18 +111,56 @@ const onModalNodeClick = (evt) => {
   }
 };
 
+function onDocumentKeydown(evt) {
+  if (evt.key === 'Escape') {
+    evt.preventDefault();
+
+    closeModal();
+  }
+}
+
 const setModalWindowHandlers = (products) => {
   menuList.addEventListener('click', (evt) => {
     const cardNode = evt.target.closest('.card');
 
     if (cardNode) {
       const cardId = cardNode.dataset.cardId;
-      const currentCardData = products.find(({ id }) => id === cardId);
+      currentCardData = products.find(({ id }) => id === cardId);
 
-      openModal(currentCardData);
+      openModal();
     }
   });
 };
+
+sizeList.addEventListener('change', (evt) => {
+  const input = evt.target.closest('.rad-check__input');
+
+  if (input) {
+    const sizeAttribute = input.getAttribute('value');
+    const sizePriceString = currentCardData.sizes[sizeAttribute]['add-price'];
+    const sizePriceFloat = Number.parseFloat(sizePriceString);
+
+    totalPrice -= sizePrice;
+    sizePrice = sizePriceFloat;
+    totalPrice += sizePrice;
+    output.textContent = `$${totalPrice.toFixed(2)}`;
+  }
+});
+
+additivesList.addEventListener('change', (evt) => {
+  const input = evt.target.closest('.rad-check__input');
+
+  if (input) {
+    const nameAttribute = input.getAttribute('name');
+    const additivesArray = currentCardData.additives;
+    const additivesItem = additivesArray.find((additive) => (additive.name.toLowerCase() === nameAttribute));
+    const additivePriceString = additivesItem['add-price'];
+    const additivePriceFloat = Number.parseFloat(additivePriceString);
+
+    totalPrice += (input.checked) ? additivePriceFloat : -additivePriceFloat;
+    output.textContent = `$${totalPrice.toFixed(2)}`;
+  }
+});
 
 closeButton.addEventListener('click', onCloseButtonClick);
 modalNode.addEventListener('click', onModalNodeClick);
