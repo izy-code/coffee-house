@@ -36,6 +36,12 @@
   }
 }
 
+@mixin media-no-hover {
+  @media (hover: none) {
+    @content;
+  }
+}
+
 /* Linear interpolation */
 @function linterp($x1, $y1, $x2, $y2, $x-input) {
   @return calc($y1 + ($y2 - $y1) / ($x2 - $x1) * ($x-input - $x1));

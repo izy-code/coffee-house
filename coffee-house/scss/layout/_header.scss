@@ -1,7 +1,7 @@
 @use "../abstracts/forward" as *;
 
 .header {
-  --margin-right-header: 30px;
+  --margin-right-header: 22px;
 
   display: flex;
   justify-content: space-between;
@@ -14,10 +14,12 @@
 }
 
 .header__burger {
+  $lines-vertical-offset: 4px;
+
   display: none;
 
   @include media-tablet {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     width: 44px;
@@ -29,28 +31,80 @@
     transition: background-color 0.5s ease-out;
   }
 
+  &::before,
   &::after {
     content: "";
+    grid-area: 1 / 1 / 2 / 2;
     width: 18px;
-    height: 10px;
+    height: 2px;
     background-color: var(--color-text-dark);
-    transition: background-color 0.5s ease-out;
-    mask-image: url("../img/icons/burger.svg");
+    border-radius: 10px;
+    transition: background-color 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  &::before {
+    transform: translateY(-$lines-vertical-offset);
+  }
+
+  &::after {
+    transform: translateY($lines-vertical-offset);
   }
 
   &:hover {
     @include media-hover {
       background-color: var(--color-bg-container);
 
+      &::before,
       &::after {
         background-color: var(--color-text-light);
       }
+    }
+  }
+
+  .header--js-burger-opened & {
+    &::before {
+      transform: rotate(-45deg) translateY(0);
+    }
+
+    &::after {
+      transform: rotate(45deg) translateY(0);
     }
   }
 }
 
 .header__nav {
   flex-grow: 1;
+  min-width: $width-min;
   padding-bottom: 4px;
+
+  @include media-tablet {
+    $top-offset: 100px;
+
+    position: fixed;
+    top: $top-offset;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: calc(100vh - $top-offset);
+    padding: 60px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100vw);
+
+    @include media-phablet {
+      padding-inline: 16px;
+    }
+
+    // Script toggles this class to prevent hiding transition of burger menu when screen narrows under tablet width
+    &--js-transition-added {
+      transition: transform 0.5s ease-out, opacity 0.5s ease-out, visibility 0.7s ease-out;
+    }
+
+    .header--js-burger-opened & {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+  }
 }
 

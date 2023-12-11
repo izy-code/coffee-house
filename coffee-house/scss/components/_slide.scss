@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 480px;
   text-align: center;
+  user-select: none;
 }
 
 .slide__title,
@@ -23,6 +23,7 @@
 .slide__img {
   order: -1;
   margin-bottom: 20px;
+  pointer-events: none;
 
   @include media-phablet {
     width: 348px;
@@ -37,6 +38,7 @@
 }
 
 .slide__desc {
+  flex-grow: 1;
   margin-block: 0;
   margin-bottom: 16px;
   font-weight: 400;

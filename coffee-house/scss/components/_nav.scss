@@ -6,24 +6,47 @@
   align-items: center;
 
   @include media-tablet {
-    display: none;
+    flex-direction: column;
+    row-gap: 100px;
+    justify-content: flex-start;
+    background-color: var(--color-bg-body);
   }
 }
 
 .nav__list {
   @include list-reset;
+
   display: flex;
   flex-grow: 1;
   flex-wrap: wrap;
   gap: 40px;
   justify-content: center;
   margin-right: var(--margin-right-header);
+
+  @include media-tablet {
+    flex-grow: 0;
+    flex-direction: column;
+    row-gap: 60px;
+    justify-content: start;
+    margin-right: 0;
+  }
+}
+
+.nav__item {
+  @include media-tablet {
+    text-align: center;
+  }
 }
 
 .nav__link {
   position: relative;
   text-decoration: none;
   color: var(--color-text-dark);
+
+  @include media-tablet {
+    font-size: 32px;
+    line-height: 125%;
+  }
 
   &::after {
     content: "";
@@ -50,6 +73,10 @@
     display: flex;
     column-gap: 8px;
 
+    @include media-tablet {
+      column-gap: 16px;
+    }
+
     &::before {
       content: "";
       flex-shrink: 0;
@@ -57,6 +84,12 @@
       width: 20px;
       height: 20px;
       background-image: url("../img/icons/coffee-cup.svg");
+
+      @include media-tablet {
+        width: 40px;
+        height: 40px;
+        background-image: url("../img/icons/burger-cup.svg");
+      }
     }
   }
 

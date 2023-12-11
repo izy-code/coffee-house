@@ -25,16 +25,16 @@
 
         <nav class="header__nav nav">
           <ul class="nav__list">
-            <li>
+            <li class="nav__item">
               <a class="nav__link" href="index.html#favorite">Favorite coffee</a>
             </li>
-            <li>
+            <li class="nav__item">
               <a class="nav__link" href="index.html#about">About</a>
             </li>
-            <li>
+            <li class="nav__item">
               <a class="nav__link" href="index.html#apps">Mobile app</a>
             </li>
-            <li>
+            <li class="nav__item">
               <a class="nav__link" href="#footer">Contact us</a>
             </li>
           </ul>
@@ -59,89 +59,7 @@
               <button class="menu__btn-category menu__btn-category--icon_dessert" type="button">Dessert</button>
             </li>
           </ul>
-
-          <ul class="menu__list">
-            <li class="card">
-              <div class="card__text-wrapper">
-                <h3 class="card__title">Irish coffee</h3>
-                <p class="card__desc">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
-                <p class="card__price">$7.00</p>
-              </div>
-              <div class="card__img-wrapper">
-                <img class="card__img" src="img/menu/coffee/coffee-1.jpg" width="340" height="340" alt="">
-              </div>
-            </li>
-            <li class="card">
-              <div class="card__text-wrapper">
-                <h3 class="card__title">Kahlua coffee</h3>
-                <p class="card__desc">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
-                <p class="card__price">$7.00</p>
-              </div>
-              <div class="card__img-wrapper">
-                <img class="card__img" src="img/menu/coffee/coffee-2.jpg" width="340" height="340" alt="">
-              </div>
-            </li>
-            <li class="card">
-              <div class="card__text-wrapper">
-                <h3 class="card__title">Honey raf</h3>
-                <p class="card__desc">Espresso with frothed milk, cream and aromatic honey</p>
-                <p class="card__price">$5.50</p>
-              </div>
-              <div class="card__img-wrapper">
-                <img class="card__img" src="img/menu/coffee/coffee-3.jpg" width="340" height="340" alt="">
-              </div>
-            </li>
-            <li class="card">
-              <div class="card__text-wrapper">
-                <h3 class="card__title">Ice cappuccino</h3>
-                <p class="card__desc">Cappuccino with soft thick foam in summer version with ice</p>
-                <p class="card__price">$5.00</p>
-              </div>
-              <div class="card__img-wrapper">
-                <img class="card__img" src="img/menu/coffee/coffee-4.jpg" width="340" height="340" alt="">
-              </div>
-            </li>
-            <li class="card">
-              <div class="card__text-wrapper">
-                <h3 class="card__title">Espresso</h3>
-                <p class="card__desc">Classic black coffee</p>
-                <p class="card__price">$4.50</p>
-              </div>
-              <div class="card__img-wrapper">
-                <img class="card__img" src="img/menu/coffee/coffee-5.jpg" width="340" height="340" alt="">
-              </div>
-            </li>
-            <li class="card">
-              <div class="card__text-wrapper">
-                <h3 class="card__title">Latte</h3>
-                <p class="card__desc">Espresso coffee with the addition of steamed milk and dense milk foam</p>
-                <p class="card__price">$5.50</p>
-              </div>
-              <div class="card__img-wrapper">
-                <img class="card__img" src="img/menu/coffee/coffee-6.jpg" width="340" height="340" alt="">
-              </div>
-            </li>
-            <li class="card">
-              <div class="card__text-wrapper">
-                <h3 class="card__title">Latte macchiato</h3>
-                <p class="card__desc">Espresso with frothed milk and chocolate</p>
-                <p class="card__price">$5.50</p>
-              </div>
-              <div class="card__img-wrapper">
-                <img class="card__img" src="img/menu/coffee/coffee-7.jpg" width="340" height="340" alt="">
-              </div>
-            </li>
-            <li class="card">
-              <div class="card__text-wrapper">
-                <h3 class="card__title">Coffee with cognac</h3>
-                <p class="card__desc">Fragrant black coffee with cognac and whipped cream</p>
-                <p class="card__price">$6.50</p>
-              </div>
-              <div class="card__img-wrapper">
-                <img class="card__img" src="img/menu/coffee/coffee-8.jpg" width="340" height="340" alt="">
-              </div>
-            </li>
-          </ul>
+          <ul class="menu__list"></ul>
           <button class="menu__btn-load" type="button">
             <span class="visually-hidden">Load more menu items</span>
           </button>
@@ -183,5 +101,58 @@
         </section>
       </footer>
     </div>
+
+    <dialog class="modal" aria-labelledby="modal-title">
+      <section class="modal__content">
+        <h2 class="visually-hidden" id="modal-title">Calculate menu item cost</h2>
+        <div class="modal__img-wrapper">
+          <img class="modal__img" src="img/menu/coffee/coffee-1.jpg" width="340" height="340" alt="">
+        </div>
+        <form class="modal__form" action="" method="get">
+          <h3 class="modal__form-title">Irish coffee</h3>
+          <p class="modal__desc">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+          <fieldset class="modal__fieldset">
+            <legend class="modal__legend">Size</legend>
+            <ul class="modal__list modal__list--size"></ul>
+          </fieldset>
+          <fieldset class="modal__fieldset">
+            <legend class="modal__legend">Additives</legend>
+            <ul class="modal__list modal__list--additives"></ul>
+          </fieldset>
+          <p class="modal__output-wrapper">
+            <span class="modal__output-label">Total:</span>
+            <output class="modal__output" role="status" name="cost">$7.00</output>
+          </p>
+          <p class="modal__info">The cost is not final. Download our mobile app to see the final price and place your
+            order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+          <button class="modal__close-button" type="button">Close</button>
+        </form>
+      </section>
+    </dialog>
+
+    <!-- Menu card template -->
+    <template id="card">
+      <li class="card">
+        <div class="card__text-wrapper">
+          <h3 class="card__title"></h3>
+          <p class="card__desc"></p>
+          <p class="card__price"></p>
+        </div>
+        <div class="card__img-wrapper">
+          <img class="card__img" src="" width="340" height="340" alt="">
+        </div>
+      </li>
+    </template>
+
+    <!-- Modal list item template -->
+    <template id="modal-item">
+      <li class="modal__item">
+        <label class="rad-check">
+          <input class="rad-check__input" type="" name="">
+          <span class="rad-check__text"></span>
+        </label>
+      </li>
+    </template>
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>

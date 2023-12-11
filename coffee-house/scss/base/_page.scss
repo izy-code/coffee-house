@@ -15,6 +15,12 @@
   height: 100%;
   margin: 0;
   background-color: var(--color-bg-body);
+
+  &--js-no-scroll {
+    @include media-tablet {
+      overflow: hidden;
+    }
+  }
 }
 
 .page__container {
