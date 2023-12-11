@@ -103,65 +103,31 @@
     </div>
 
     <dialog class="modal" aria-labelledby="modal-title">
-      <h2 class="visually-hidden" id="modal-title">Calculate menu item cost</h2>
-      <div class="modal__img-wrapper">
-        <img class="modal__img" src="img/menu/coffee/coffee-1.jpg" width="340" height="340" alt="">
-      </div>
-      <form class="modal__form" action="" method="get">
-        <h3 class="modal__card-title">Irish coffee</h3>
-        <p class="modal__desc">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
-        <fieldset class="modal__fieldset">
-          <legend class="modal__legend">Size</legend>
-          <ul class="modal__list">
-            <li class="modal__item">
-              <label class="radio radio--size_S">
-                <input class="radio__input" type="radio" name="size" value="S" checked>
-                <span class="radio__text">200 ml</span>
-              </label>
-            </li>
-            <li class="modal__item">
-              <label class="radio radio--size_M">
-                <input class="radio__input" type="radio" name="size" value="M">
-                <span class="radio__text">300 ml</span>
-              </label>
-            </li>
-            <li class="modal__item">
-              <label class="radio radio--size_L">
-                <input class="radio__input" type="radio" name="size" value="L">
-                <span class="radio__text">400 ml</span>
-              </label>
-            </li>
-          </ul>
-        </fieldset>
-        <fieldset class="modal__fieldset">
-          <legend class="modal__legend">Additives</legend>
-          <ul class="modal__list">
-            <li class="modal__item">
-              <label class="checkbox">
-                <input class="checkbox__input" type="checkbox" name="sugar">
-                <span class="checkbox__text">Sugar</span>
-              </label>
-            </li>
-            <li class="modal__item">
-              <label class="checkbox">
-                <input class="checkbox__input" type="checkbox" name="сinnamon">
-                <span class="checkbox__text">Cinnamon</span>
-              </label>
-            </li>
-            <li class="modal__item">
-              <label class="checkbox">
-                <input class="checkbox__input" type="checkbox" name="syrup">
-                <span class="checkbox__text">Syrup</span>
-              </label>
-            </li>
-          </ul>
-        </fieldset>
-        <span class="modal__output-label">Total:</span>
-        <output class="modal__output" role="status" name="cost">$7.00</output>
-        <p class="modal__info">The cost is not final. Download our mobile app to see the final price and place your
-          order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
-        <button class="modal__close-button" type="button">Close</button>
-      </form>
+      <section class="modal__content">
+        <h2 class="visually-hidden" id="modal-title">Calculate menu item cost</h2>
+        <div class="modal__img-wrapper">
+          <img class="modal__img" src="img/menu/coffee/coffee-1.jpg" width="340" height="340" alt="">
+        </div>
+        <form class="modal__form" action="" method="get">
+          <h3 class="modal__form-title">Irish coffee</h3>
+          <p class="modal__desc">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+          <fieldset class="modal__fieldset">
+            <legend class="modal__legend">Size</legend>
+            <ul class="modal__list modal__list--size"></ul>
+          </fieldset>
+          <fieldset class="modal__fieldset">
+            <legend class="modal__legend">Additives</legend>
+            <ul class="modal__list modal__list--additives"></ul>
+          </fieldset>
+          <p class="modal__output-wrapper">
+            <span class="modal__output-label">Total:</span>
+            <output class="modal__output" role="status" name="cost">$7.00</output>
+          </p>
+          <p class="modal__info">The cost is not final. Download our mobile app to see the final price and place your
+            order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+          <button class="modal__close-button" type="button">Close</button>
+        </form>
+      </section>
     </dialog>
 
     <!-- Menu card template -->
@@ -175,6 +141,16 @@
         <div class="card__img-wrapper">
           <img class="card__img" src="" width="340" height="340" alt="">
         </div>
+      </li>
+    </template>
+
+    <!-- Modal list item template -->
+    <template id="modal-item">
+      <li class="modal__item">
+        <label class="rad-check">
+          <input class="rad-check__input" type="" name="">
+          <span class="rad-check__text"></span>
+        </label>
       </li>
     </template>
     <script src="./js/main.js" type="module"></script>

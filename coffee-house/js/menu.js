@@ -1,5 +1,6 @@
 const TABLET_CARDS_COUNT_MAX = 4;
 const WIDTH_TABLET = 768;
+const CARD_TRANSITION_DURATION_MS = 400;
 
 const cardTemplateNode = document.querySelector('#card').content.querySelector('.card');
 const menuNode = document.querySelector('.menu');
@@ -9,7 +10,6 @@ const menuList = menuNode.querySelector('.menu__list');
 
 let activeCategory = 'coffee';
 let isFirstRender = true;
-let products = [];
 
 const createCard = ({ id: id, name, description, price, category }) => {
   const cardNode = cardTemplateNode.cloneNode(true);
@@ -23,14 +23,21 @@ const createCard = ({ id: id, name, description, price, category }) => {
   return cardNode;
 };
 
-const renderCards = () => {
+const createCategoryFragment = (products) => {
   const fragment = document.createDocumentFragment();
   const filteredProducts = products.filter((product) => product.category === activeCategory);
 
   filteredProducts.forEach((product) => {
     const cardNode = createCard(product);
+
     fragment.append(cardNode);
   });
+
+  return fragment;
+};
+
+const renderCards = (products) => {
+  const fragment = createCategoryFragment(products);
 
   menuList.style.opacity = 0;
 
@@ -44,32 +51,14 @@ const renderCards = () => {
     menuList.innerHTML = '';
     menuList.append(fragment);
     menuList.style.opacity = 1;
+
     menuLoadButton.style.animation = '';
     menuLoadButton.style.display = '';
 
     if (menuList.childElementCount <= TABLET_CARDS_COUNT_MAX) {
       menuLoadButton.style.display = 'none';
     }
-  }, 400);
-};
-
-const onMenuButtonsListClick = (evt) => {
-  const button = evt.target.closest('.menu__btn-category');
-
-  if (button && !button.matches('.menu__btn-category--active')) {
-    const previousActiveButton = menuButtonsList.querySelector('.menu__btn-category--active');
-
-    previousActiveButton.classList.remove('menu__btn-category--active');
-    button.classList.add('menu__btn-category--active');
-
-    button.classList.forEach((className) => {
-      if (className.startsWith('menu__btn-category--icon_')) {
-        activeCategory = className.slice('menu__btn-category--icon_'.length);
-      }
-    });
-
-    renderCards();
-  }
+  }, CARD_TRANSITION_DURATION_MS);
 };
 
 const onMenuLoadButtonClick = () => {
@@ -77,6 +66,7 @@ const onMenuLoadButtonClick = () => {
 
   cardNodes.forEach((cardNode) => {
     const displayProperty = window.getComputedStyle(cardNode).getPropertyValue('display');
+
     if (displayProperty === 'none') {
       cardNode.style.opacity = 0;
       cardNode.style.display = 'flex';
@@ -102,13 +92,30 @@ const onWindowResize = () => {
   }
 };
 
-const initMenu = (data) => {
-  products = data;
-  renderCards();
+const initMenu = (products) => {
+  renderCards(products);
 
-  menuButtonsList.addEventListener('click', onMenuButtonsListClick);
-  menuLoadButton.addEventListener('click', onMenuLoadButtonClick);
-  window.addEventListener('resize', onWindowResize);
+  menuButtonsList.addEventListener('click', (evt) => {
+    const button = evt.target.closest('.menu__btn-category');
+
+    if (button && !button.matches('.menu__btn-category--active')) {
+      const previousActiveButton = menuButtonsList.querySelector('.menu__btn-category--active');
+
+      previousActiveButton.classList.remove('menu__btn-category--active');
+      button.classList.add('menu__btn-category--active');
+
+      button.classList.forEach((className) => {
+        if (className.startsWith('menu__btn-category--icon_')) {
+          activeCategory = className.slice('menu__btn-category--icon_'.length);
+        }
+      });
+
+      renderCards(products);
+    }
+  });
 };
+
+menuLoadButton.addEventListener('click', onMenuLoadButtonClick);
+window.addEventListener('resize', onWindowResize);
 
 export { initMenu };
