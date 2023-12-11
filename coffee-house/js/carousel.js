@@ -99,8 +99,10 @@ const initCarousel = () => {
   window.addEventListener('resize', onWindowResize);
   prevButton.addEventListener('click', showPrevSlide);
   nextButton.addEventListener('click', showNextSlide);
-  carouselWindowNode.addEventListener('mouseenter', pauseProgressBarAdvancement);
-  carouselWindowNode.addEventListener('mouseleave', startProgressBarAdvancement);
+  slideNodes.forEach((slideNode) => {
+    slideNode.addEventListener('mouseenter', pauseProgressBarAdvancement);
+    slideNode.addEventListener('mouseleave', startProgressBarAdvancement);
+  });
   carouselWindowNode.addEventListener('touchstart', pauseProgressBarAdvancement,
     { passive: true });
   carouselWindowNode.addEventListener('touchend', startProgressBarAdvancement);

@@ -10,6 +10,7 @@ const menuList = menuNode.querySelector('.menu__list');
 
 let activeCategory = 'coffee';
 let isFirstRender = true;
+let currentWindowWidth;
 
 const createCard = ({ id: id, name, description, price, category }) => {
   const cardNode = cardTemplateNode.cloneNode(true);
@@ -81,7 +82,7 @@ const onMenuLoadButtonClick = () => {
 };
 
 const onWindowResize = () => {
-  if (window.innerWidth > WIDTH_TABLET && menuList.childElementCount > TABLET_CARDS_COUNT_MAX) {
+  if (window.innerWidth < currentWindowWidth && menuList.childElementCount > TABLET_CARDS_COUNT_MAX) {
     const cardNodes = menuList.childNodes;
 
     cardNodes.forEach((cardNode) => {
@@ -90,10 +91,12 @@ const onWindowResize = () => {
 
     menuLoadButton.style.display = '';
   }
+  currentWindowWidth = window.innerWidth;
 };
 
 const initMenu = (products) => {
   renderCards(products);
+  currentWindowWidth = window.innerWidth;
 
   menuButtonsList.addEventListener('click', (evt) => {
     const button = evt.target.closest('.menu__btn-category');
