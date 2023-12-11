@@ -666,9 +666,11 @@ img {
   color: var(--color-text-dark);
   background-color: var(--color-bg-body);
 }
-.rad-check__input[type=checkbox]:hover:checked + .rad-check__text {
-  background-color: var(--color-text-accent);
-  border-color: var(--color-text-accent);
+@media (hover: hover) {
+  .rad-check__input[type=checkbox]:hover:checked + .rad-check__text {
+    background-color: var(--color-text-accent);
+    border-color: var(--color-text-accent);
+  }
 }
 
 .header {
@@ -740,7 +742,7 @@ img {
     position: fixed;
     top: 100px;
     left: 0;
-    z-index: 1;
+    z-index: 10;
     width: 100vw;
     height: calc(100vh - 100px);
     padding: 60px 40px;

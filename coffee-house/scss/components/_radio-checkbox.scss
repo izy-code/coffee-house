@@ -73,7 +73,9 @@
   }
 
   &[type="checkbox"]:hover:checked + .rad-check__text {
-    background-color: var(--color-text-accent);
-    border-color: var(--color-text-accent);
+    @include media-hover {
+      background-color: var(--color-text-accent);
+      border-color: var(--color-text-accent);
+    }
   }
 }
