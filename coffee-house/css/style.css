@@ -455,7 +455,7 @@ img {
 }
 
 .card__desc {
-  margin-block: 0;
+  margin: 0 -1px;
   font-weight: 400;
 }
 
@@ -614,8 +614,8 @@ img {
   grid-area: 1/1/2/2;
   column-gap: 8px;
   align-items: center;
-  padding: 8px;
-  padding-right: 16px;
+  padding: 7px;
+  padding-right: 15px;
   font-size: 16px;
   line-height: 150%;
   font-weight: 600;
@@ -1338,7 +1338,7 @@ img {
 
 .modal__close-button {
   width: 100%;
-  padding: 10px 20px;
+  padding: 9px 20px;
   font-family: var(--font-primary);
   font-size: 16px;
   line-height: 150%;
