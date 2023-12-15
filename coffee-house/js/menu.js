@@ -1,5 +1,4 @@
 const TABLET_CARDS_COUNT_MAX = 4;
-const WIDTH_TABLET = 768;
 const CARD_TRANSITION_DURATION_MS = 400;
 
 const cardTemplateNode = document.querySelector('#card').content.querySelector('.card');
@@ -12,7 +11,7 @@ let activeCategory = 'coffee';
 let isFirstRender = true;
 let currentWindowWidth;
 
-const createCard = ({ id: id, name, description, price, category }) => {
+const createCard = ({ id, name, description, price, category }) => {
   const cardNode = cardTemplateNode.cloneNode(true);
 
   cardNode.querySelector('.card__title').textContent = name;
