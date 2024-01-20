@@ -1,4 +1,4 @@
-Deploy: [link](https://rolling-scopes-school.github.io/izy-code-JSFE2023Q4/coffee-house/)
+Deploy: [link](https://izy-code.github.io/coffee-house/coffee-house/)
 
 ![rolling-scopes-school github io_izy-code-JSFE2023Q4_coffee-house_index html](https://github.com/rolling-scopes-school/izy-code-JSFE2023Q4/assets/126877709/6e5e2e09-eb0c-4b26-9061-72daff899ad1)
 
