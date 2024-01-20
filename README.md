@@ -1,7 +1,7 @@
 Deploy: [link](https://rolling-scopes-school.github.io/izy-code-JSFE2023Q4/coffee-house/)
 
-Screenshots:
 ![rolling-scopes-school github io_izy-code-JSFE2023Q4_coffee-house_index html](https://github.com/rolling-scopes-school/izy-code-JSFE2023Q4/assets/126877709/6e5e2e09-eb0c-4b26-9061-72daff899ad1)
+
 ![rolling-scopes-school github io_izy-code-JSFE2023Q4_coffee-house_menu html](https://github.com/rolling-scopes-school/izy-code-JSFE2023Q4/assets/126877709/9fe57652-df71-45a4-8b9d-07305a72788f)
 
 Tasks: [week1](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/coffee-house/coffee-house-week1.md), [week2](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/coffee-house/coffee-house-week2.md), [week3](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/coffee-house/coffee-house-week3.md) 
